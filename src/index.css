@@ -1,0 +1,19 @@
+@import "tailwindcss";
+:root {
+  --primary-text: #0d172a;      /* Dark navy text */
+  --secondary-text: #64748b;    /* Muted gray text */
+  --highlight: #f97316;         /* Orange highlight */
+  --highlight-light: #fb923c;   /* Lighter orange */
+  --bg-light: #f8fafc;          /* Very light background */
+  --bg-white: #ffffff;          /* Pure white */
+}
+
+.text-primary { color: var(--primary-text); }
+.text-secondary { color: var(--secondary-text); }
+.text-highlight { color: var(--highlight); }
+.bg-light { background-color: var(--bg-light); }
+.bg-white { background-color: var(--bg-white); }
+.bg-highlight { background-color: var(--highlight); }
+.bg-highlight-light { background-color: var(--highlight-light); }
+
+
