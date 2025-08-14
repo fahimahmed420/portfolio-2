@@ -62,7 +62,7 @@ export default function Timeline() {
   ];
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 rounded-lg p-6">
       <div className="max-w-4xl mx-auto px-4">
         {/* Header section of the timeline */}
         <div className="flex items-center gap-4 mb-10">
@@ -100,7 +100,7 @@ const TimelineItem = ({ item }) => {
   };
 
   return (
-    <div className="relative mb-8">
+    <div className="relative p-6">
       {/* Container for the icon on the timeline */}
       <div className="absolute top-0 -left-1 z-10 p-2 bg-white text-blue-600 rounded-full border-4 border-neutral-100 shadow-md">
         {item.icon}
@@ -120,7 +120,7 @@ const TimelineItem = ({ item }) => {
         </div>
 
         <p className="mt-4 text-neutral-600">{item.description}</p>
-        
+
         {/* Additional information tags like category and location */}
         <div className="mt-4 flex gap-2 text-xs font-medium">
           <span className="bg-neutral-200 text-neutral-600 px-2 py-1 rounded-full">{item.category}</span>

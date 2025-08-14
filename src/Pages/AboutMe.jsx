@@ -16,10 +16,10 @@ const AboutMe = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex justify-center px-4">
-      <div className="max-w-7xl w-full flex gap-8">
+    <div className="min-h-screen bg-gray-50 flex justify-center">
+      <div className="max-w-7xl px-5 lg:px-8 py-8 flex gap-8">
         {/* Left Sidebar */}
-        <aside className="w-80 bg-white p-6 shadow-lg sticky top-16 h-[calc(100vh-64px)] flex flex-col gap-6">
+        <aside className="w-80 bg-white p-6 shadow-lg sticky top-16 h-[calc(100vh-64px)] flex flex-col gap-6 rounded-lg">
           <div className="flex flex-col items-center">
             <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg mb-4">
               <Image src={profile.image} alt={profile.name} className="w-full h-full object-cover" />
