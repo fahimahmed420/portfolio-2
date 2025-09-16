@@ -1,0 +1,194 @@
+[
+    {
+        "name": "HTML5",
+        "category": "Technical",
+        "experience": "8 months of intensive learning",
+        "proficiency": 80,
+        "level": "Intermediate",
+        "badges": [
+            "Semantic HTML",
+            "Accessibility Aware"
+        ],
+        "description": "Built semantic, accessible, and SEO-friendly web page structures using HTML5 standards.",
+        "projects": [
+            "Personal Portfolio Website",
+            "Blog Page Layout"
+        ]
+    },
+    {
+        "name": "CSS3 & Responsive Design",
+        "category": "Technical",
+        "experience": "8 months of intensive learning",
+        "proficiency": 78,
+        "level": "Intermediate",
+        "badges": [
+            "Responsive Design",
+            "CSS Flexbox/Grid"
+        ],
+        "description": "Designed responsive and mobile-first layouts using Flexbox, Grid, and media queries.",
+        "projects": [
+            "Responsive Landing Page",
+            "Styled Components in React"
+        ]
+    },
+    {
+        "name": "JavaScript (ES6 Basics)",
+        "category": "Technical",
+        "experience": "8 months of intensive learning",
+        "proficiency": 75,
+        "level": "Beginner",
+        "badges": [
+            "ES6 Basics",
+            "DOM Manipulation"
+        ],
+        "description": "Developed interactive features using ES6 syntax, DOM manipulation, and event handling.",
+        "projects": [
+            "Interactive To-Do List",
+            "Image Carousel"
+        ]
+    },
+    {
+        "name": "React.js Fundamentals",
+        "category": "Technical",
+        "experience": "8 months of intensive learning",
+        "proficiency": 78,
+        "level": "Intermediate",
+        "badges": [
+            "React Basics",
+            "State & Props"
+        ],
+        "description": "Built interactive UIs with components, props, state, and hooks.",
+        "projects": [
+            "Weather App",
+            "Product List with Search Filter"
+        ]
+    },
+    {
+        "name": "Git & GitHub",
+        "category": "Technical",
+        "experience": "8 months of intensive learning",
+        "proficiency": 72,
+        "level": "Beginner",
+        "badges": [
+            "Version Control",
+            "Collaboration"
+        ],
+        "description": "Used Git for version control and GitHub for collaborative coding and project hosting.",
+        "projects": [
+            "Personal Portfolio Repository",
+            "Group Project Contributions"
+        ]
+    },
+    {
+        "name": "API Integration",
+        "category": "Technical",
+        "experience": "8 months of intensive learning",
+        "proficiency": 70,
+        "level": "Beginner",
+        "badges": [
+            "REST API",
+            "Axios/Fetch"
+        ],
+        "description": "Fetched and displayed data from public APIs using Fetch API and Axios.",
+        "projects": [
+            "Movie Search App",
+            "News Feed App"
+        ]
+    },
+    {
+        "name": "Node.js & Express.js Basics",
+        "category": "Technical",
+        "experience": "8 months of intensive learning",
+        "proficiency": 65,
+        "level": "Beginner",
+        "badges": [
+            "Backend Basics",
+            "Routing"
+        ],
+        "description": "Created simple backend servers and REST APIs using Node.js and Express.js.",
+        "projects": [
+            "Contact Form Backend",
+            "Simple REST API"
+        ]
+    },
+    {
+        "name": "Database Basics (MongoDB/SQL)",
+        "category": "Technical",
+        "experience": "8 months of intensive learning",
+        "proficiency": 65,
+        "level": "Beginner",
+        "badges": [
+            "Database CRUD",
+            "Data Modeling"
+        ],
+        "description": "Stored and retrieved data using MongoDB or basic SQL queries for small projects.",
+        "projects": [
+            "User Registration System",
+            "Notes App"
+        ]
+    },
+    {
+        "name": "UI Frameworks (Tailwind CSS / Bootstrap)",
+        "category": "Technical",
+        "experience": "8 months of intensive learning",
+        "proficiency": 75,
+        "level": "Intermediate",
+        "badges": [
+            "Tailwind CSS",
+            "Bootstrap"
+        ],
+        "description": "Styled web applications quickly and consistently using utility-first and component-based CSS frameworks.",
+        "projects": [
+            "Responsive Product Grid",
+            "Admin Dashboard Layout"
+        ]
+    },
+    {
+        "name": "Debugging & Problem Solving",
+        "category": "Technical",
+        "experience": "8 months of intensive learning",
+        "proficiency": 70,
+        "level": "Beginner",
+        "badges": [
+            "Chrome DevTools",
+            "Error Handling"
+        ],
+        "description": "Debugged web applications using browser DevTools, console logs, and systematic troubleshooting.",
+        "projects": [
+            "Bug Fixes in JavaScript Projects",
+            "Debugged API Data Rendering"
+        ]
+    },
+    {
+        "name": "English Language Proficiency",
+        "category": "Language",
+        "experience": "10+ years of academic and self-learning",
+        "proficiency": 85,
+        "level": "Advanced",
+        "badges": [
+            "Fluent Communication",
+            "Technical Writing"
+        ],
+        "description": "Strong command of English for written and verbal communication, including technical documentation.",
+        "projects": [
+            "Technical Blog Writing",
+            "Project Documentation for Web Applications"
+        ]
+    },
+    {
+        "name": "Project Management (Agile/Scrum)",
+        "category": "Management",
+        "experience": "6 months of practice in team projects",
+        "proficiency": 70,
+        "level": "Beginner",
+        "badges": [
+            "Agile Practices",
+            "Task Planning"
+        ],
+        "description": "Coordinated small-scale projects using Agile methodologies, sprint planning, and task tracking tools.",
+        "projects": [
+            "Group React Project with Kanban Board",
+            "API Integration Project Planning"
+        ]
+    }
+]
