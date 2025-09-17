@@ -14,88 +14,116 @@ const Projects = () => {
       .catch((err) => console.error("Failed to load projects:", err));
   }, []);
 
+   useEffect(() => {
+      document.title = "Projects | Fahim Ahmed";
+    }, []);
+
   return (
-    <div className="pt-16 max-w-7xl mx-auto px-5 lg:px-8 py-8 min-h-screen">
-      <h1 className="text-3xl font-bold mb-6">Projects</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {projects.slice(0, visibleProjects).map((project) => (
-          <motion.div
-            key={project.id}
-            className="bg-gray-100 rounded-xl border-gray-200 border hover:shadow-lg overflow-hidden cursor-pointer relative group"
-            whileHover={{ scale: 1.02 }}
-            onClick={() => setSelectedProject(project)}
-          >
-            {/* Image with blur on hover */}
-            <div className="relative">
-              <img
-                src={project.images[0] || "/fallback-black.png"}
-                alt={project.title}
-                className="w-full h-64 object-cover transition-all duration-300 group-hover:blur-sm"
-                onError={(e) => (e.currentTarget.src = "/fallback-black.png")}
-              />
-              <div className="absolute inset-0 flex justify-center items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    window.open(project.liveLink, "_blank");
-                  }}
-                  className="bg-blue-600 text-white px-4 py-2 rounded"
-                >
-                  Live Demo
-                </button>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setSelectedProject(project);
-                  }}
-                  className="bg-white text-black px-4 py-2 rounded"
-                >
-                  View Details
-                </button>
-              </div>
-            </div>
+  <div className="max-w-7xl mx-auto px-5 lg:px-8 py-8 min-h-screen">
+  {/* Page Heading */}
+  <motion.div
+    className="text-center mb-12"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+  >
+    <h1 className="text-3xl lg:text-4xl font-bold text-primary mb-4">
+      My Projects Portfolio
+    </h1>
+    <p className="text-gray-600 max-w-3xl mx-auto text-base lg:text-lg">
+      Explore a curated selection of my recent web projects, demonstrating full-stack development, UI/UX design, and problem-solving skills.  
+      Each project showcases responsive, modern, and efficient web solutions tailored for real-world applications.
+    </p>
+  </motion.div>
 
-            {/* Card content */}
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">{project.title}</h2>
-              <p className="text-gray-600 mt-1 line-clamp-1">{project.description}</p>
-              <div className="flex justify-between items-center mt-2 text-sm text-gray-500">
-                <span>Duration: {project.duration}</span>
-                <span
-                  className={`px-2 py-1 rounded text-white ${project.status === "completed" ? "bg-green-500" : "bg-yellow-500"
-                    }`}
-                >
-                  {project.status}
-                </span>
-              </div>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {project.tech.slice(0, 5).map((tech, idx) => (
-                  <span key={idx} className="bg-gray-200 px-2 py-1 rounded text-xs">
-                    {tech}
-                  </span>
-                ))}
-                {project.tech.length > 5 && (
-                  <span className="bg-gray-200 px-2 py-1 rounded text-xs">
-                    +{project.tech.length - 5}
-                  </span>
-                )}
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Show All button */}
-      {projects.length > visibleProjects && (
-        <div className="flex justify-center mt-6">
-          <button
-            onClick={() => setVisibleProjects(projects.length)}
-            className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
-          >
-            Show All
-          </button>
+  {/* Projects Grid */}
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {projects.slice(0, visibleProjects).map((project, index) => (
+      <motion.div
+        key={project.id}
+        className="bg-gray-100 rounded-xl border border-gray-200 hover:shadow-lg overflow-hidden cursor-pointer relative group"
+        whileHover={{ scale: 1.02 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: index * 0.1, duration: 0.4 }}
+        onClick={() => setSelectedProject(project)}
+      >
+        {/* Image with overlay buttons */}
+        <div className="relative">
+          <img
+            src={project.images[0] || "/fallback-black.png"}
+            alt={project.title}
+            className="w-full h-56 lg:h-64 object-cover transition-all duration-300 group-hover:blur-sm"
+            onError={(e) => (e.currentTarget.src = "/fallback-black.png")}
+          />
+          <div className="absolute inset-0 flex justify-center items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open(project.liveLink, "_blank");
+              }}
+              className="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 transition text-sm"
+            >
+              Live Demo
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedProject(project);
+              }}
+              className="bg-white text-black px-3 py-1.5 rounded hover:bg-gray-100 transition text-sm"
+            >
+              View Details
+            </button>
+          </div>
         </div>
-      )}
+
+        {/* Card content */}
+        <div className="p-4">
+          <h2 className="text-lg font-semibold text-primary">{project.title}</h2>
+          <p className="text-gray-600 mt-1 text-sm line-clamp-2">{project.description}</p>
+          <div className="flex justify-between items-center mt-2 text-xs text-gray-500">
+            <span>Duration: {project.duration}</span>
+            <span
+              className={`px-2 py-0.5 rounded text-white text-[10px] ${project.status === "completed" ? "bg-green-500" : "bg-yellow-500"
+                }`}
+            >
+              {project.status}
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {project.tech.slice(0, 5).map((tech, idx) => (
+              <span key={idx} className="bg-gray-200 px-2 py-1 rounded text-[10px]">
+                {tech}
+              </span>
+            ))}
+            {project.tech.length > 5 && (
+              <span className="bg-gray-200 px-2 py-1 rounded text-[10px]">
+                +{project.tech.length - 5}
+              </span>
+            )}
+          </div>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+
+  {/* Show All button */}
+  {projects.length > visibleProjects && (
+    <motion.div
+      className="flex justify-center mt-8"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.2, duration: 0.4 }}
+    >
+      <button
+        onClick={() => setVisibleProjects(projects.length)}
+        className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition text-sm"
+      >
+        Show All Projects
+      </button>
+    </motion.div>
+  )}
 
       {/* Project Modal */}
       {selectedProject && (

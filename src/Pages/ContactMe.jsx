@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ScheduleMeeting from '../Components/ScheduleMeeting';
 import LocationAvailability from '../Components/LocationAvailability';
 
 // react-icons imports
-import { LuMail, LuMapPin, LuClock, LuContact, LuDownload, LuPhone, LuExternalLink, LuLinkedin, LuGithub, LuTwitter, LuDribbble, LuList ,LuZap, LuSend, LuUsers} from "react-icons/lu";
+import { LuMail, LuMapPin, LuClock, LuContact, LuDownload, LuPhone, LuExternalLink, LuLinkedin, LuGithub, LuTwitter, LuDribbble, LuList, LuZap, LuSend, LuUsers } from "react-icons/lu";
 
 const ContactMe = () => {
+
+    useEffect(() => {
+        document.title = "Contact | Fahim Ahmed";
+    }, []);
+
     return (
         <div className='max-w-7xl mx-auto px-5 lg:px-8 py-8 space-y-7'>
             {/* main section */}
@@ -83,7 +88,7 @@ const ContactMe = () => {
             {/* quick section */}
             <div class="bg-gray-100 shadow-sm rounded-lg py-5 px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center text-gray-900 mb-6">
-                   <LuZap className="h-6 w-6 mr-2 text-gray-600" />
+                    <LuZap className="h-6 w-6 mr-2 text-gray-600" />
                     <h3 class="text-xl font-semibold">Quick Actions</h3>
                 </div>
 
@@ -240,7 +245,7 @@ const ContactMe = () => {
             </div>
             {/* Social media section */}
             <div className='bg-gray-100 rounded-lg py-5 px-4 sm:px-6 lg:px-8'>
-                
+
                 <h1 className='text-xl font-semibold mb-6 flex'> <LuUsers className="h-6 w-6 text-gray-600 mr-2" />Social Media & Professional Networks</h1>
                 <div className="grid grid-cols-2 gap-4">
                     {/* LinkedIn */}

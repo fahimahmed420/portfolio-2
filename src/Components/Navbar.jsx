@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { FaBookOpen, FaHome, FaUser, FaBriefcase, FaTools, FaFolderOpen, FaEnvelope } from "react-icons/fa";
+import { FaBookOpen, FaHome, FaUser, FaBriefcase, FaTools, FaFolderOpen, FaEnvelope, FaBars, FaTimes } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,11 +26,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 transition-all duration-300 border-b border-gray-200 ${
-        isScrolled
+      className={`sticky top-0 z-50 transition-all duration-300 border-b border-gray-200 ${isScrolled
           ? "py-2 shadow-md bg-white/30 backdrop-blur-md"
           : "py-4 bg-[var(--color-background)]"
-      }`}
+        }`}
     >
       <div className="container max-w-7xl mx-auto flex items-center justify-between px-5 lg:px-8">
         {/* Logo */}
@@ -37,18 +38,17 @@ export default function Navbar() {
           Fahim Ahmed
         </div>
 
-        {/* Nav Links */}
-        <div className="flex items-center gap-4">
+        {/* Desktop Nav Links */}
+        <div className="hidden lg:flex items-center gap-4">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               end
               className={({ isActive }) =>
-                `flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-all ${
-                  isActive
-                    ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]"
-                    : "text-gray-500 hover:text-[var(--color-primary)] hover:bg-gray-100"
+                `flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-all ${isActive
+                  ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]"
+                  : "text-gray-500 hover:text-[var(--color-primary)] hover:bg-gray-100"
                 }`
               }
             >
@@ -57,7 +57,47 @@ export default function Navbar() {
             </NavLink>
           ))}
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="lg:hidden text-2xl text-gray-700 hover:text-[var(--color-primary)] transition"
+        >
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="lg:hidden overflow-hidden bg-white shadow-md"
+          >
+            <div className="flex flex-col px-5 py-3 gap-2">
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  end
+                  onClick={() => setIsOpen(false)}
+                  className={({ isActive }) =>
+                    `flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-all ${isActive
+                      ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]"
+                      : "text-gray-500 hover:text-[var(--color-primary)] hover:bg-gray-100"
+                    }`
+                  }
+                >
+                  {item.icon}
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

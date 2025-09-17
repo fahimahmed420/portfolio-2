@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Image from "../Components/AppImage";
 import Button from "../Components/ui/Button";
+import * as Tooltip from "@radix-ui/react-tooltip";
 import {
   LuAward,
   LuUsers,
@@ -10,7 +11,6 @@ import {
   LuLinkedin,
   LuGithub,
   LuTwitter,
-  LuDribbble,
   LuCode,
   LuCoffee,
   LuUser,
@@ -20,7 +20,9 @@ import {
   LuArrowRight,
   LuDownload,
   LuExternalLink,
+  LuFacebook,
 } from "react-icons/lu";
+import { FaWhatsapp } from "react-icons/fa";
 import TabPreviewSection from "../Components/TabPreviewSection";
 
 const iconMap = {
@@ -31,7 +33,7 @@ const iconMap = {
   Linkedin: LuLinkedin,
   Github: LuGithub,
   Twitter: LuTwitter,
-  Dribbble: LuDribbble,
+  Facebook: LuFacebook,
   Code: LuCode,
   Coffee: LuCoffee,
   User: LuUser,
@@ -39,7 +41,6 @@ const iconMap = {
   FolderOpen: LuFolderOpen,
   Mail: LuMail,
   ArrowRight: LuArrowRight,
-  Download: LuDownload,
   ExternalLink: LuExternalLink,
 };
 
@@ -83,7 +84,7 @@ const Home = () => {
       { platform: "LinkedIn", icon: "Linkedin", url: "https://www.linkedin.com/in/-fahim-ahmed/", },
       { platform: "GitHub", icon: "Github", url: "https://github.com/fahimahmed420" },
       { platform: "Twitter", icon: "Twitter", url: "https://x.com/Fahim_Ahmed_420" },
-      { platform: "Facebook", icon: "Dribbble", url: "https://www.facebook.com/fahimahmed420/", },
+      { platform: "Facebook", icon: "Facebook", url: "https://www.facebook.com/fahimahmed420/", },
     ],
   };
 
@@ -112,7 +113,14 @@ const Home = () => {
     link?.click();
   };
 
-  const handleContactClick = () => navigate("/contact-connect-hub");
+  const handleContactClick = () => {
+    const phoneNumber = "8801774433063";
+    const message = "Hello Fahim, I came across your portfolio and would like to connect.";
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappLink, "_blank");
+  };
+
   const handleViewAllProjects = () => navigate("/projects");
 
   useEffect(() => {
@@ -193,20 +201,30 @@ const Home = () => {
               <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                 <Button
                   variant="default"
-                  iconName="Download"
-                  iconPosition="left"
                   onClick={handleDownloadResume}
                 >
+                  <LuDownload className="mr-1" size={18} />
                   Download Resume
                 </Button>
-                <Button
-                  variant="outline"
-                  iconName="Mail"
-                  iconPosition="left"
-                  onClick={handleContactClick}
-                >
-                  Get In Touch
-                </Button>
+                {/* WhatsApp Button with Tooltip */}
+                <div className="relative inline-block group">
+                  <Button
+                    className="bg-green-600 hover:bg-green-800"
+                    onClick={handleContactClick}
+                  >
+                    <FaWhatsapp size={18} className="mr-1" />
+                    Chat on WhatsApp
+                  </Button>
+
+                  {/* Tooltip below */}
+                  <div className="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 top-full left-1/2 -translate-x-1/2 mt-2 w-44 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2">
+                    <div className="relative p-2 bg-gray-900/95 text-white text-sm rounded-md shadow-lg text-center">
+                      For Quick Response
+                      {/* Arrow pointing up */}
+                      <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-gray-900/95 rotate-45"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 

@@ -62,13 +62,19 @@ const Skills = () => {
 
   const categories = ["All", ...new Set(skills.map((s) => s.category))];
 
+  useEffect(() => {
+    document.title = "Skills | Fahim Ahmed";
+  }, []);
+
   return (
-    <div className="min-h-screen bg-background pt-16 max-w-7xl mx-auto px-5 lg:px-8 py-8">
+    <div className="min-h-screen max-w-7xl mx-auto px-5 lg:px-8 py-8">
       {/* Heading */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-primary mb-4">My Skills</h1>
-        <p className="text-text-secondary max-w-2xl mx-auto">
-          Explore my professional skills. Filter, search, or sort to explore my expertise. Click on projects to view them live.
+        <h1 className="text-3xl lg:text-4xl font-bold text-primary mb-3">
+          My Skills
+        </h1>
+        <p className="text-text-secondary max-w-2xl mx-auto text-sm lg:text-base">
+          Explore my professional skills. I focus on building high-quality, responsive, and user-friendly applications. Filter, search, or sort to explore my expertise.
         </p>
       </div>
 
@@ -79,13 +85,11 @@ const Skills = () => {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-4 py-2 rounded-lg shadow-sm transition transform hover:-translate-y-0.5 hover:shadow-md ${
-                filter === cat
+              className={`px-3 md:px-4 py-1 md:py-2 rounded-lg text-sm md:text-base shadow-sm transition transform hover:-translate-y-0.5 hover:shadow-md ${filter === cat
                   ? "bg-blue-600 text-white"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
+                }`}
             >
-              {/* Optional icons for filters */}
               {cat === "All" && "🗂️ "} {cat === "Technical" && "💻 "} {cat === "Language" && "📝 "} {cat === "Management" && "📋 "}
               {cat}
             </button>
@@ -100,60 +104,59 @@ const Skills = () => {
           placeholder="Search skills..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="px-4 py-2 border border-gray-200 rounded-lg w-full md:w-1/3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="px-3 md:px-4 py-2 border border-gray-200 rounded-lg w-full md:w-1/3 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-       <CustomSortDropdown sortBy={sortBy} setSortBy={setSortBy} />
+        <CustomSortDropdown sortBy={sortBy} setSortBy={setSortBy} />
       </div>
 
       {/* Skill Cards */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredSkills.map((skill, index) => (
-          <div
+          <motion.div
             key={index}
-            className="bg-gray-100 rounded-xl p-6 transition border border-gray-200 transform hover:-translate-y-1 hover:shadow-xl"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: index * 0.05 }}
+            style={{ zIndex: filteredSkills.length - index }}
+            className="bg-gray-50 rounded-xl p-4 md:p-6 transition border border-gray-200 transform hover:-translate-y-1 hover:shadow-lg relative"
           >
-            {/* Header with icon */}
-            <h3 className="font-heading text-lg font-semibold text-primary mb-2">
-              <span className="mr-2">{skill.icon}</span>
-              {skill.name}
+            <h3 className="font-heading text-base md:text-lg font-semibold text-primary mb-1 md:mb-2 flex items-center gap-2">
+              {skill.icon} {skill.name}
             </h3>
-            <p className="text-text-secondary text-sm mb-2">{skill.experience}</p>
+            <p className="text-text-secondary text-xs md:text-sm mb-2">{skill.experience}</p>
 
-            {/* Proficiency */}
-            <div className="flex justify-between text-sm mt-3 mb-1">
+            <div className="flex justify-between text-xs md:text-sm mt-2 mb-1">
               <span>Proficiency</span>
               <span>{skill.proficiency}%</span>
             </div>
-            <div className="w-full bg-gray-300 rounded-full h-3 mb-3">
+            <div className="w-full bg-gray-300 rounded-full h-2 md:h-3 mb-2">
               <div
-                className={`${getBarColor(skill.level)} h-3 rounded-full transition-all`}
+                className={`${getBarColor(skill.level)} h-2 md:h-3 rounded-full transition-all`}
                 style={{ width: `${skill.proficiency}%` }}
               />
             </div>
-            <p className="text-sm font-medium text-primary mb-2">{skill.level}</p>
+            <p className="text-xs md:text-sm font-medium text-primary mb-2">{skill.level}</p>
 
-            {/* Badges */}
-            <div className="flex flex-wrap gap-2 mb-3">
+            <div className="flex flex-wrap gap-2 mb-2">
               {skill.badges.map((badge, i) => (
                 <span
                   key={i}
                   title={`Badge: ${badge}`}
-                  className="text-xs px-2 py-1 bg-muted/50 rounded-full border text-text-secondary cursor-help"
+                  className="text-xs px-2 py-1 bg-gray-100 rounded-full border text-gray-600 cursor-help"
                 >
                   {badge}
                 </span>
               ))}
             </div>
 
-            {/* Expand Button */}
             <button
               onClick={() => toggleExpand(index)}
-              className="text-blue-600 text-sm font-medium mt-2 hover:underline"
+              className="text-blue-600 text-xs md:text-sm font-medium mt-1 hover:underline"
             >
               {expanded === index ? "Hide Details ▲" : "Show Details ▼"}
             </button>
 
-            {/* Expanded Content */}
             <AnimatePresence>
               {expanded === index && (
                 <motion.div
@@ -161,7 +164,7 @@ const Skills = () => {
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="mt-4 text-sm text-text-secondary space-y-2 bg-white p-4 rounded-lg shadow-inner"
+                  className="mt-2 md:mt-4 text-xs md:text-sm text-text-secondary space-y-2 bg-white p-3 md:p-4 rounded-lg shadow-inner"
                 >
                   <p>{skill.description}</p>
                   <div>
@@ -188,19 +191,25 @@ const Skills = () => {
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {/* Radar Chart */}
-      <div className="mt-16">
-        <h2 className="text-2xl font-semibold text-center mb-6">
+      <div className="mt-12 md:mt-16">
+        <h2 className="text-2xl font-semibold text-center mb-3">
           Skills Proficiency Overview
         </h2>
-        <p className="text-center text-text-secondary mb-6 max-w-2xl mx-auto">
-          The radar chart below provides a visual overview of my skills and their proficiency levels.
+        <p className="text-center text-text-secondary text-sm md:text-base mb-6 max-w-2xl mx-auto">
+          A visual overview of my skills and their proficiency levels.
         </p>
-        <div className="w-full h-96">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7 }}
+          className="w-full h-80 md:h-96"
+        >
           <ResponsiveContainer>
             <RadarChart data={skills}>
               <PolarGrid />
@@ -215,7 +224,7 @@ const Skills = () => {
               <RechartsTooltip />
             </RadarChart>
           </ResponsiveContainer>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

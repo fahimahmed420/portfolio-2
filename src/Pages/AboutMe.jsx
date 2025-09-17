@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "../Components/AppImage";
 import { LuMapPin, LuCalendar, LuMail, LuPhone } from "react-icons/lu";
 import Timeline from "../Components/Timeline";
@@ -14,6 +14,10 @@ const AboutMe = () => {
     phone: "+880 1234-567890",
     coreValues: ["Innovation", "Collaboration", "Quality", "Learning"]
   };
+
+  useEffect(() => {
+        document.title = "About | Fahim Ahmed";
+      }, []);
 
   return (
     <div className="min-h-screen bg-gray-50 flex justify-center">
