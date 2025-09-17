@@ -1,19 +1,65 @@
 @import "tailwindcss";
+
 :root {
-  --primary-text: #0d172a;      /* Dark navy text */
-  --secondary-text: #64748b;    /* Muted gray text */
-  --highlight: #f97316;         /* Orange highlight */
-  --highlight-light: #fb923c;   /* Lighter orange */
-  --bg-light: #f8fafc;          /* Very light background */
-  --bg-white: #ffffff;          /* Pure white */
+  --primary-text: #0d172a;
+  /* Dark navy text */
+  --secondary-text: #64748b;
+  /* Muted gray text */
+  --highlight: #f97316;
+  /* Orange highlight */
+  --highlight-light: #fb923c;
+  /* Lighter orange */
+  --bg-light: #f8fafc;
+  /* Very light background */
+  --bg-white: #ffffff;
+  /* Pure white */
 }
 
-.text-primary { color: var(--primary-text); }
-.text-secondary { color: var(--secondary-text); }
-.text-highlight { color: var(--highlight); }
-.bg-light { background-color: var(--bg-light); }
-.bg-white { background-color: var(--bg-white); }
-.bg-highlight { background-color: var(--highlight); }
-.bg-highlight-light { background-color: var(--highlight-light); }
+.text-primary {
+  color: var(--primary-text);
+}
+
+.text-secondary {
+  color: var(--secondary-text);
+}
+
+.text-highlight {
+  color: var(--highlight);
+}
+
+.bg-light {
+  background-color: var(--bg-light);
+}
+
+.bg-white {
+  background-color: var(--bg-white);
+}
+
+.bg-highlight {
+  background-color: var(--highlight);
+}
+
+.bg-highlight-light {
+  background-color: var(--highlight-light);
+}
 
 
+/* parent spins slowly */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 30s linear infinite;
+}
+
+/* icons counter-rotate to stay upright */
+@keyframes counter-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+.animate-counter-spin {
+  animation: counter-spin 30s linear infinite;
+}

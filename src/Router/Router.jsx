@@ -6,6 +6,7 @@ import Home from "../Pages/Home";
 import AboutMe from "../Pages/AboutMe";
 import ContactMe from "../Pages/ContactMe";
 import Skills from "../Pages/Skills";
+import Projects from "../Pages/Projects";
 
 const router = createBrowserRouter([
     {
@@ -14,8 +15,9 @@ const router = createBrowserRouter([
         children: [
             { index: true, Component: Home },
             { path: "about", Component: AboutMe },
-            { path: "contact", Component: ContactMe },
             { path: "skills", Component: Skills },
+            { path: "projects", Component: Projects },
+            { path: "contact", Component: ContactMe },
         ],
     },
 

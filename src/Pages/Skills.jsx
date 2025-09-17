@@ -110,7 +110,7 @@ const Skills = () => {
         {filteredSkills.map((skill, index) => (
           <div
             key={index}
-            className="bg-gray-100 rounded-xl shadow-lg p-6 transition transform hover:-translate-y-1 hover:shadow-xl"
+            className="bg-gray-100 rounded-xl p-6 transition border border-gray-200 transform hover:-translate-y-1 hover:shadow-xl"
           >
             {/* Header with icon */}
             <h3 className="font-heading text-lg font-semibold text-primary mb-2">

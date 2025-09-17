@@ -1,0 +1,187 @@
+[
+  {
+    "id": 1,
+    "title": "Smart Home System",
+    "tech": ["React Native", "HTML", "JavaScript"],
+    "description": "A mobile app designed to control and monitor smart home devices, offering real-time updates, intuitive UI, and seamless device integration.",
+    "images": ["/images/project2/b1.png"],
+    "liveLink": "https://elaborate-kitten-84133b.netlify.app/",
+    "sourceCode": "https://github.com/fahimahmed420",
+    "hasAdminRole": false,
+    "pages": [
+      { "name": "Homepage 2", "link": "/images/project2/b2.png" },
+      { "name": "Device Dashboard", "link": "/images/project2/b3.png" },
+      { "name": "Room Controls", "link": "/images/project2/b4.png" },
+      { "name": "Energy Analytics", "link": "/images/project2/b5.png" },
+      { "name": "Notifications", "link": "/images/project2/b6.png" },
+      { "name": "User Settings", "link": "/images/project2/b7.png" }
+    ],
+    "challengesFaced": [
+      "Integrating real-time device data updates across multiple hardware vendors.",
+      "Ensuring low-latency communication between the app and IoT devices.",
+      "Maintaining a responsive UI across different screen sizes."
+    ],
+    "futurePlans": [
+      "Add voice assistant integration (Alexa, Google Assistant).",
+      "Introduce energy-saving AI suggestions based on usage patterns.",
+      "Enable offline control for certain device functions."
+    ],
+    "duration": "4 Days",
+    "status": "completed"
+  },
+  {
+    "id": 2,
+    "title": "Law BD",
+    "tech": ["React", "Firebase", "JavaScript"],
+    "description": "A modern platform connecting users with legal services, case tracking, and lawyer consultations, featuring a clean UI and real-time updates.",
+    "images": ["/images/project3/c1.png"],
+    "liveLink": "https://stunning-biscochitos-5f46e9.netlify.app/",
+    "sourceCode": "https://github.com/fahimahmed420",
+    "hasAdminRole": false,
+    "pages": [
+      { "name": "Homepage 2", "link": "/images/project3/c2.png" },
+      { "name": "Lawyer Directory", "link": "/images/project3/c3.png" },
+      { "name": "Legal Services", "link": "/images/project3/c4.png" },
+      { "name": "Case Tracking", "link": "/images/project3/c5.png" }
+    ],
+    "challengesFaced": [
+      "Managing sensitive client-lawyer data securely.",
+      "Implementing an efficient real-time case tracking system.",
+      "Creating a searchable lawyer directory with multiple filters."
+    ],
+    "futurePlans": [
+      "Add video call consultations.",
+      "Introduce AI-based case document summarization.",
+      "Implement automated legal form generation."
+    ],
+    "duration": "4 Days",
+    "status": "completed"
+  },
+  {
+    "id": 3,
+    "title": "WorkSphereX",
+    "tech": ["JavaScript", "React", "Vercel", "Firebase"],
+    "description": "A responsive online marketplace where freelancers can showcase their services, and clients can browse, filter, and hire talent with a secure checkout system.",
+    "images": ["/images/project1/a1.png"],
+    "liveLink": "https://beautiful-tartufo-17dc98.netlify.app/",
+    "sourceCode": "https://github.com/fahimahmed420/FTM-client",
+    "hasAdminRole": false,
+    "pages": [
+      { "name": "Homepage 2", "link": "/images/project1/a2.png" },
+      { "name": "Browse Services", "link": "/images/project1/a3.png" },
+      { "name": "Freelancer Profiles", "link": "/images/project1/a4.png" },
+      { "name": "Cart & Checkout", "link": "/images/project1/a5.png" }
+    ],
+    "challengesFaced": [
+      "Building a scalable filtering system for thousands of services.",
+      "Handling secure payments and escrow logic.",
+      "Managing user reviews and dispute resolution features."
+    ],
+    "futurePlans": [
+      "Add AI-based service recommendations.",
+      "Enable milestone-based payments.",
+      "Introduce freelancer skill verification badges."
+    ],
+    "duration": "1 Week",
+    "status": "completed"
+  },
+  {
+    "id": 4,
+    "title": "HotelEr",
+    "tech": ["React", "Firebase", "JavaScript", "Node.js", "MongoDB", "Express"],
+    "description": "A feature-rich hotel booking platform with real-time availability checking, date filtering, and secure user authentication. Designed for speed and mobile-first responsiveness.",
+    "images": ["/images/project4/h1.png"],
+    "liveLink": "https://assignment-11-59a34.web.app/",
+    "sourceCode": "https://github.com/fahimahmed420/HotelEr-client",
+    "hasAdminRole": false,
+    "pages": [
+      { "name": "Homepage", "link": "/images/project4/h2.png" },
+      { "name": "Rooms", "link": "/images/project4/h3.png" },
+      { "name": "Room Details", "link": "/images/project4/h4.png" },
+      { "name": "Payment", "link": "/images/project4/h5.png" },
+      { "name": "User Dashboard", "link": "/images/project4/h6.png" },
+      { "name": "Users Booking", "link": "/images/project4/h7.png" },
+      { "name": "Table Reservation", "link": "/images/project4/h8.png" }
+    ],
+    "challengesFaced": [
+      "Ensuring booked dates are disabled in real-time without page refresh.",
+      "Implementing dynamic price filtering on the server side.",
+      "Handling high-traffic concurrency for booking requests."
+    ],
+    "futurePlans": [
+      "Add AI-powered room recommendations.",
+      "Implement loyalty points and rewards.",
+      "Enable multi-hotel booking in one checkout."
+    ],
+    "duration": "10 Days",
+    "status": "completed"
+  },
+  {
+    "id": 5,
+    "title": "EduManage",
+    "tech": ["React", "Firebase", "JavaScript", "Vercel", "MongoDB", "Node.js", "Express", "REST API"],
+    "description": "A comprehensive full-stack e-learning platform offering courses in web development, UI/UX design, and AI. It includes secure authentication, role-based access for instructors and students, course management, and real-time progress tracking with a smooth and engaging learning experience.",
+    "images": ["/images/project5/p-4.png"],
+    "liveLink": "https://edumanage-d7a0d.web.app/",
+    "sourceCode": "https://github.com/fahimahmed420/EduManage-Client",
+    "hasAdminRole": true,
+    "adminEmail": "admin123@gmail.com",
+    "adminPassword": "Admin123",
+    "pages": [
+      { "name": "Homepage 2", "link": "/images/project5/p-4-1.png" },
+      { "name": "All Classes", "link": "/images/project5/p-4-2.png" },
+      { "name": "Class Details", "link": "/images/project5/p-4-3.png" },
+      { "name": "Payment Page", "link": "/images/project5/p-4-4.png" },
+      { "name": "Become Teacher", "link": "/images/project5/p-4-5.png" },
+      { "name": "Dashboard Profile", "link": "/images/project5/p-4-6.png" },
+      { "name": "Enrolled Classes", "link": "/images/project5/p-4-7.png" },
+      { "name": "Payment Details", "link": "/images/project5/p-4-8.png" },
+      { "name": "Students Assignments", "link": "/images/project5/p-4-9.png" },
+      { "name": "Class Details", "link": "/images/project5/p-4-10.png" },
+      { "name": "Add", "link": "/images/project5/p-4-11.png" }
+    ],
+    "challengesFaced": [
+      "Implementing role-based authentication for admins, instructors, and students.",
+      "Managing large datasets for courses and assignments efficiently.",
+      "Ensuring real-time updates for student progress and submissions."
+    ],
+    "futurePlans": [
+      "Add AI-driven personalized learning paths.",
+      "Integrate live video classes and chat.",
+      "Enable certificate generation upon course completion."
+    ],
+    "duration": "2 Weeks",
+    "status": "completed"
+  },
+  {
+  "id": 6,
+  "title": "CampusPilot",
+  "tech": ["React","JavaScript","Zustand","Tailwind CSS","shadcn/ui","Recharts","Node.js","Express","MongoDB","Firebase Authentication","Vercel"],
+  "description": "CampusPilot is a full-stack student life management app that combines scheduling, budgeting, exam prep, and study planning into a single platform. It includes a unique daily agenda generator blending classes, urgent tasks, and Pomodoro sessions for smarter productivity.",
+  "images": ["/images/project6/p-6.png"],
+  "liveLink": "https://campuspilot-demo.web.app/",
+  "sourceCode": "https://github.com/fahimahmed420/CampusPilot-client",
+  "hasAdminRole": false,
+  "pages": [
+    { "name": "Homepage", "link": "/images/project6/p-6-1.png" },
+    { "name": "Class Schedule", "link": "/images/project6/p-6-2.png" },
+    { "name": "Budget Tracker", "link": "/images/project6/p-6-3.png" },
+    { "name": "Exam Q&A Generator", "link": "/images/project6/p-6-4.png" },
+    { "name": "Study Planner", "link": "/images/project6/p-6-5.png" },
+    { "name": "Dashboard Overview", "link": "/images/project6/p-6-7.png" }
+  ],
+  "challengesFaced": [
+    "Designing a flexible weekly calendar system.",
+    "Balancing real-time budget updates with performance efficiency.",
+    "Ensuring smooth syncing between study planner tasks and class schedules."
+  ],
+  "futurePlans": [
+    "Mobile app version for iOS/Android.",
+    "Advanced analytics for spending and study patterns Using AI.",
+    "Integration with Google Calendar and Microsoft Outlook."
+  ],
+  "duration": "10 Days",
+  "status": "completed"
+}
+
+]
