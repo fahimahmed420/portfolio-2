@@ -1,35 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import LocationAvailability from '../Components/LocationAvailability';
-import emailjs from "emailjs-com";
-
-// react-icons imports
 import { LuMail, LuMapPin, LuClock, LuContact, LuDownload, LuPhone, LuExternalLink, LuLinkedin, LuGithub, LuTwitter, LuDribbble, LuList, LuZap, LuSend, LuUsers } from "react-icons/lu";
 import MessageForm from '../Components/MessageForm';
 
 const ContactMe = () => {
-    const [loading, setLoading] = useState(false);
-
-    const sendEmail = (e) => {
-        e.preventDefault();
-        setLoading(true);
-
-        emailjs.sendForm(
-            "service_0l3n9pk",
-            "template_nzu7iwd",
-            e.target,
-            "OPWTCVfkvwsNbUOcK"
-        )
-            .then(() => {
-                alert("Message sent successfully!");
-                setLoading(false);
-                e.target.reset();
-            })
-            .catch((err) => {
-                console.error(err);
-                alert("Something went wrong. Try again!");
-                setLoading(false);
-            });
-    };
 
     useEffect(() => {
         document.title = "Contact | Fahim Ahmed";
@@ -117,53 +91,96 @@ const ContactMe = () => {
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-4 border-b border-gray-200 mb-6">
-                    <a href="/fahim.vcf" download class="flex items-center justify-between group">
-                        <div class="flex items-center">
-                            <LuDownload className="h-6 w-6 mr-2 text-gray-600" />
+                    <a
+                        href="/fahim.vcf"
+                        download
+                        className="flex items-center justify-between group hover:text-blue-500 transition-colors"
+                    >
+                        <div className="flex items-center">
+                            <LuDownload className="h-6 w-6 mr-2 text-gray-600 group-hover:text-blue-500 transition-colors" />
                             <div>
-                                <p class="text-base font-medium text-gray-900 group-hover:text-indigo-600">Download vCard</p>
-                                <p class="text-sm text-gray-500">Save my contact info to your device</p>
+                                <p className="text-base font-medium text-gray-900 group-hover:text-blue-500 transition-colors">
+                                    Download vCard
+                                </p>
+                                <p className="text-sm text-gray-500 group-hover:text-blue-400 transition-colors">
+                                    Save my contact info to your device
+                                </p>
                             </div>
                         </div>
-                        <svg class="h-5 w-5 text-gray-400 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        <svg
+                            className="h-5 w-5 text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </a>
-                    <a href="/Fahim_Ahmed_Resume.pdf" download class="flex items-center justify-between group">
+
+                    <a href="/Fahim_Ahmed_Resume.pdf" download class="flex items-center justify-between group hover:text-blue-500">
                         <div class="flex items-center">
-                            <svg class="h-6 w-6 text-gray-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg class="h-6 w-6 group-hover:text-blue-500 text-gray-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                             </svg>
                             <div>
-                                <p class="text-base font-medium text-gray-900 group-hover:text-indigo-600">Download Resume</p>
-                                <p class="text-sm text-gray-500">Get my latest resume in PDF format</p>
+                                <p class="text-base font-medium text-gray-900  group-hover:text-blue-500">Download Resume</p>
+                                <p class="text-sm text-gray-500 group-hover:text-blue-500">Get my latest resume in PDF format</p>
                             </div>
                         </div>
-                        <svg class="h-5 w-5 text-gray-400 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="h-5 w-5 group-hover:text-blue-500 text-gray-400 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </a>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <a href="#" class="bg-[#2d485f] hover:bg-[#233849] rounded-lg p-6 flex items-center justify-between transition-colors">
+                    <a
+                        href="https://calendar.app.google/mNHGyFk2Xe7DDDGa7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-[#2d485f] hover:bg-[#233849] rounded-lg p-6 flex items-center justify-between transition-colors"
+                    >
                         <div>
-                            <p class="text-xl font-semibold text-white">Schedule Meeting</p>
-                            <p class="mt-1 text-sm text-gray-300">Book a consultation call</p>
+                            <p className="text-xl font-semibold text-white">Schedule Meeting</p>
+                            <p className="mt-1 text-sm text-gray-300">
+                                Book a consultation call at your convenience
+                            </p>
                         </div>
-                        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        <svg
+                            className="h-6 w-6 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
                         </svg>
                     </a>
-                    <a href="#" class="bg-[#8b7964] hover:bg-[#726454] rounded-lg p-6 flex items-center justify-between transition-colors">
+
+                    <a
+                        href="https://wa.me/8801774433063?text=Hello%20Fahim,%20I%20want%20to%20connect%20with%20you."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-green-700 hover:bg-green-800 rounded-lg p-6 flex items-center justify-between transition-colors"
+                    >
                         <div>
-                            <p class="text-xl font-semibold text-white">Quick Message</p>
-                            <p class="mt-1 text-sm text-gray-200">Send me a message directly</p>
+                            <p className="text-xl font-semibold text-white">Quick Message</p>
+                            <p className="mt-1 text-sm text-gray-200">Chat instantly on WhatsApp</p>
                         </div>
-                        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        <svg
+                            className="h-6 w-6 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </a>
+
                 </div>
 
                 <div class="flex items-start mt-6 p-4 bg-gray-50 rounded-lg text-sm text-gray-600">
@@ -177,7 +194,7 @@ const ContactMe = () => {
                 </div>
             </div>
             {/* massage section */}
-           <MessageForm/>
+            <MessageForm />
             {/* Social media section */}
             <div className='bg-gray-100 rounded-lg py-5 px-4 sm:px-6 lg:px-8'>
 
