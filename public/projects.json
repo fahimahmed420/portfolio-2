@@ -153,35 +153,45 @@
     "duration": "2 Weeks",
     "status": "completed"
   },
-  {
+{
   "id": 6,
   "title": "CampusPilot",
-  "tech": ["React","JavaScript","Zustand","Tailwind CSS","shadcn/ui","Recharts","Node.js","Express","MongoDB","Firebase Authentication","Vercel"],
-  "description": "CampusPilot is a full-stack student life management app that combines scheduling, budgeting, exam prep, and study planning into a single platform. It includes a unique daily agenda generator blending classes, urgent tasks, and Pomodoro sessions for smarter productivity.",
+  "tech": [
+    "React",
+    "JavaScript",
+    "Tailwind CSS",
+    "Recharts",
+    "Firebase",
+    "MongoDB",
+    "Node.js",
+    "Express",
+    "REST API",
+    "Vercel"
+  ],
+  "description": "CampusPilot is a full-stack web application designed to help students track class schedules, manage budgets, prepare for exams, and plan study sessions — all in one place. It combines tools like a schedule tracker, budget tracker with visualizations, a Q&A exam generator, and a study planner into a single dashboard for student productivity.",
   "images": ["/images/project6/p-6.png"],
-  "liveLink": "https://campuspilot-demo.web.app/",
+  "liveLink": "https://campus-pilot-24c9b.web.app/",
   "sourceCode": "https://github.com/fahimahmed420/CampusPilot-client",
   "hasAdminRole": false,
   "pages": [
-    { "name": "Homepage", "link": "/images/project6/p-6-1.png" },
+    { "name": "Dashboard", "link": "/images/project6/p-6-1.png" },
     { "name": "Class Schedule", "link": "/images/project6/p-6-2.png" },
     { "name": "Budget Tracker", "link": "/images/project6/p-6-3.png" },
     { "name": "Exam Q&A Generator", "link": "/images/project6/p-6-4.png" },
     { "name": "Study Planner", "link": "/images/project6/p-6-5.png" },
-    { "name": "Dashboard Overview", "link": "/images/project6/p-6-7.png" }
+    { "name": "Profile & Settings", "link": "/images/project6/p-6-6.png" }
   ],
   "challengesFaced": [
-    "Designing a flexible weekly calendar system.",
-    "Balancing real-time budget updates with performance efficiency.",
-    "Ensuring smooth syncing between study planner tasks and class schedules."
+    "Integrating Firebase authentication with server-side token verification.",
+    "Designing a unified dashboard layout for multiple student tools.",
+    "Managing state across modules like budget tracking, study planner, and Q&A generator."
   ],
   "futurePlans": [
-    "Mobile app version for iOS/Android.",
-    "Advanced analytics for spending and study patterns Using AI.",
-    "Integration with Google Calendar and Microsoft Outlook."
+    "Add collaborative study groups with Pomodoro timers.",
+    "Enable Google Calendar sync for class schedules.",
+    "Enhance Q&A generator with AI-driven personalized quizzes."
   ],
   "duration": "10 Days",
-  "status": "Running"
+  "status": "completed"
 }
-
 ]
