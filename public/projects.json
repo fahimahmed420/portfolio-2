@@ -153,8 +153,43 @@
     "duration": "2 Weeks",
     "status": "completed"
   },
-{
+  {
   "id": 6,
+  "title": "Developer Portfolio",
+  "tech": [
+    "React",
+    "Tailwind CSS",
+    "Framer Motion",
+    "React Router"
+  ],
+  "description": "A modern and responsive personal developer portfolio showcasing skills, projects, and experience. Built with React, Tailwind CSS, and Framer Motion, it features smooth animations, dynamic project details, and theme toggling for an engaging user experience.",
+  "images": ["/images/project6/hero.png"],
+  "liveLink": "https://grand-concha-28f8d1.netlify.app/",
+  "sourceCode": "https://github.com/fahimahmed420/portfolio1",
+  "hasAdminRole": false,
+  "pages": [
+    { "name": "Home / Hero Section", "link": "/images/project6/hero.png" },
+    { "name": "Projects Page", "link": "/images/project6/projects.png" },
+    { "name": "Project Details", "link": "/images/project6/details.png" },
+    { "name": "Resume Page", "link": "/images/project6/resume.png" },
+    { "name": "Work Experience Timeline", "link": "/images/project6/workExperiance.png" },
+    { "name": "Contact Form", "link": "/images/project6/contact.png" }
+  ],
+  "challengesFaced": [
+    "Implementing smooth animations with Framer Motion across multiple sections.",
+    "Dynamic routing for project details with clean URL structure.",
+    "Ensuring a fully responsive design across devices.",
+    "Dark/light theme toggle that does something else,lol."
+  ],
+  "futurePlans": [
+    "Add a Blog section for sharing knowledge.",
+    "Enhance light mode styling."
+  ],
+  "duration": "1 Week",
+  "status": "completed"
+},
+{
+  "id": 7,
   "title": "CampusPilot",
   "tech": [
     "React",
@@ -169,17 +204,17 @@
     "Vercel"
   ],
   "description": "CampusPilot is a full-stack web application designed to help students track class schedules, manage budgets, prepare for exams, and plan study sessions — all in one place. It combines tools like a schedule tracker, budget tracker with visualizations, a Q&A exam generator, and a study planner into a single dashboard for student productivity.",
-  "images": ["/images/project6/p-6.png"],
+  "images": ["/images/project7/home.png"],
   "liveLink": "https://campus-pilot-24c9b.web.app/",
   "sourceCode": "https://github.com/fahimahmed420/CampusPilot-client",
   "hasAdminRole": false,
   "pages": [
-    { "name": "Dashboard", "link": "/images/project6/p-6-1.png" },
-    { "name": "Class Schedule", "link": "/images/project6/p-6-2.png" },
-    { "name": "Budget Tracker", "link": "/images/project6/p-6-3.png" },
-    { "name": "Exam Q&A Generator", "link": "/images/project6/p-6-4.png" },
-    { "name": "Study Planner", "link": "/images/project6/p-6-5.png" },
-    { "name": "Profile & Settings", "link": "/images/project6/p-6-6.png" }
+    { "name": "Home", "link": "/images/project7/hero.png" },
+    { "name": "Dashboard", "link": "/images/project7/dashboard.png" },
+    { "name": "Class Schedule", "link": "/images/project7/class.png" },
+    { "name": "Budget Tracker", "link": "/images/project7/budget.png" },
+    { "name": "Exam Q&A Generator", "link": "/images/project7/qa-genarator.png" },
+    { "name": "Study Planner", "link": "/images/project7/study-planner.png" }
   ],
   "challengesFaced": [
     "Integrating Firebase authentication with server-side token verification.",
