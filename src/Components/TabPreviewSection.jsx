@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaUser, FaBriefcase, FaAward, FaFolderOpen, FaEnvelope } from "react-icons/fa";
+import {
+  Code, Database, Layers, Code2, Target, BookOpen, Monitor, Server, Wrench, Palette,
+  Briefcase, Building2, GraduationCap, User, School, Coffee,Lightbulb
+} from "lucide-react";
 
 const iconMap = {
   user: FaUser,
@@ -21,10 +25,19 @@ const tabs = [
         <p className="mb-4">
           Full-Stack Developer passionate about crafting web applications with modern technologies.
         </p>
-        <ul className="space-y-2 list-disc list-inside">
-          <li>💻 Specialized in React, Node.js & scalable web apps</li>
-          <li>🎯 Dedicated to clean code, UX, and best practices</li>
-          <li>📚 Always exploring new tools and technologies</li>
+        <ul className="space-y-3">
+          <li className="flex items-center gap-2">
+            <Code2 className="w-5 h-5 text-blue-600" />
+            <span>Specialized in React, Node.js & scalable web apps</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <Target className="w-5 h-5 text-green-600" />
+            <span>Dedicated to clean code, UX, and best practices</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <BookOpen className="w-5 h-5 text-purple-600" />
+            <span>Always exploring new tools and technologies</span>
+          </li>
         </ul>
       </div>
     ),
@@ -39,10 +52,19 @@ const tabs = [
         <p className="mb-4">
           Hands-on projects and collaborations that shaped my expertise.
         </p>
-        <ul className="space-y-2 list-disc list-inside">
-          <li>🚀 Built multiple React & Node.js projects</li>
-          <li>💻 Worked with MongoDB & Firebase</li>
-          <li>📈 Focused on scalable and maintainable code</li>
+        <ul className="space-y-3">
+          <li className="flex items-center gap-2">
+            <Code className="w-5 h-5 text-blue-600" />
+            <span>Built multiple React & Node.js projects</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <Database className="w-5 h-5 text-green-600" />
+            <span>Worked with MongoDB & Firebase</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <Layers className="w-5 h-5 text-purple-600" />
+            <span>Focused on scalable and maintainable code</span>
+          </li>
         </ul>
       </div>
     ),
@@ -57,15 +79,26 @@ const tabs = [
         <p className="mb-4">
           Discover my technical competencies, tools I master, and areas of specialization.
         </p>
-        <ul className="space-y-2 list-disc list-inside">
-          <li>
-            <span className="font-medium">Frontend:</span> React, Vue.js, TypeScript
+        <ul className="space-y-3">
+          <li className="flex items-center gap-2">
+            <Monitor className="w-5 h-5 text-blue-600" />
+            <span><span className="font-medium">Frontend:</span> React, JavaScript (ES6+), Tailwind CSS</span>
           </li>
-          <li>
-            <span className="font-medium">Backend:</span> Node.js, Python, PostgreSQL
+          <li className="flex items-center gap-2">
+            <Server className="w-5 h-5 text-green-600" />
+            <span><span className="font-medium">Backend:</span> Node.js, Express.js</span>
           </li>
-          <li>
-            <span className="font-medium">Design:</span> Figma, Adobe Creative Suite
+          <li className="flex items-center gap-2">
+            <Database className="w-5 h-5 text-purple-600" />
+            <span><span className="font-medium">Database:</span> MongoDB, Mongoose</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <Wrench className="w-5 h-5 text-orange-600" />
+            <span><span className="font-medium">Tools & Workflow:</span> Git, GitHub, REST APIs, JWT/Auth</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <Palette className="w-5 h-5 text-pink-600" />
+            <span><span className="font-medium">Design:</span> Figma (UI/UX prototyping)</span>
           </li>
         </ul>
       </div>
@@ -81,18 +114,30 @@ const tabs = [
         <p className="mb-4">
           A selection of projects showcasing my skills and problem-solving approach.
         </p>
-        <ul className="space-y-2 list-disc list-inside">
-          <li>
-            <span className="font-medium">Portfolio Dashboard:</span> React, Tailwind
+        <ul className="space-y-3">
+          <li className="flex items-center gap-2">
+            <Briefcase className="w-5 h-5 text-blue-600" />
+            <span><span className="font-medium">WorkSphereX:</span> Marketplace for freelancers & clients with secure checkout</span>
           </li>
-          <li>
-            <span className="font-medium">E-commerce App:</span> Node.js, MongoDB
+          <li className="flex items-center gap-2">
+            <Building2 className="w-5 h-5 text-green-600" />
+            <span><span className="font-medium">HotelEr:</span> Full-stack hotel booking system (React, Node, MongoDB)</span>
           </li>
-          <li>
-            <span className="font-medium">Chat Application:</span> React, Firebase
+          <li className="flex items-center gap-2">
+            <GraduationCap className="w-5 h-5 text-purple-600" />
+            <span><span className="font-medium">EduManage:</span> E-learning platform with courses, roles & progress tracking</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <User className="w-5 h-5 text-orange-600" />
+            <span><span className="font-medium">Developer Portfolio:</span> Modern portfolio with animations & dynamic pages</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <School className="w-5 h-5 text-pink-600" />
+            <span><span className="font-medium">CampusPilot:</span> Student dashboard with schedule, budget, and Q&A tools</span>
           </li>
         </ul>
       </div>
+
     ),
   },
   {
@@ -102,18 +147,28 @@ const tabs = [
     content: (
       <div className="text-gray-700 w-full">
         <h3 className="text-lg font-semibold mb-2">Contact</h3>
-        <p className="mb-4">
-          Let's connect for collaborations, opportunities, or just a chat!
+
+        <div className="space-y-2">
+          <p className="flex items-center gap-2 ml-0">
+            Always happy to chat about
+          </p>
+          <p className="flex items-center gap-2 ml-0">
+            <Code2 className="w-5 h-5 text-blue-600" />
+            code
+          </p>
+          <p className="flex items-center gap-2 ml-4">
+            <Coffee className="w-5 h-5 text-green-500" />
+            coffee
+          </p>
+          <p className="flex items-center gap-2 ml-8">
+            <Lightbulb className="w-5 h-5 text-purple-600" />
+            or cool project ideas
+          </p>
+        </div>
+
+        <p className="text-sm text-gray-600 mt-4">
+          Let's connect and build something amazing together!
         </p>
-        <ul className="space-y-2 list-disc list-inside">
-          <li>Email: <span className="font-medium">fahim@example.com</span></li>
-          <li>
-            LinkedIn:{" "}
-            <a href="#" className="text-blue-600 hover:underline">
-              linkedin.com/in/fahim
-            </a>
-          </li>
-        </ul>
       </div>
     ),
   },

@@ -102,7 +102,7 @@ const Home = () => {
       company: "Bekar",
       avatar: "https://i.ibb.co.com/mrc8BGvS/IMG-1593.jpg",
       content:
-        "People say nothing about me,cause most of them doesn't even know me.",
+        "Excited to share client feedback here soon! Currently working on building real-world projects and sharpening my skills.",
     },
   ];
 
