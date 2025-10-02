@@ -42,7 +42,7 @@ const ContactMe = () => {
                                 <LuMail className="h-6 w-6 mr-2 text-gray-600" />
                                 <div>
                                     <dt className="text-sm font-medium text-gray-500">Email</dt>
-                                    <dd className="mt-1 text-gray-900">asifahmed55445@gmail.com</dd>
+                                    <dd className="mt-1 text-gray-900">fahim.ahmed.portfolio@gmail.com</dd>
                                     <dd className="mt-0.5 text-sm text-gray-500">Best for detailed inquiries</dd>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@ const ContactMe = () => {
                                 <div>
                                     <dt className="text-sm font-medium text-gray-500">Availability</dt>
                                     <dd className="mt-1 text-gray-900">Available for new projects</dd>
-                                    <dd className="mt-0.5 text-sm text-gray-500">Starting September 2025</dd>
+                                    <dd className="mt-0.5 text-sm text-gray-500">Always up for something new</dd>
                                 </div>
                             </div>
                         </div>

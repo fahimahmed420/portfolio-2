@@ -142,24 +142,70 @@ const Home = () => {
     <div className="min-h-screen bg-background">
       <main className="pt-16 max-w-7xl mx-auto px-5 lg:px-8 py-8">
         {/* HERO SECTION */}
-        <section className="bg-gray-100 rounded-xl shadow-elevation-2 overflow-hidden mb-12 p-8 lg:p-12">
+        <section className="bg-white rounded-xl shadow-elevation-2 overflow-hidden mb-12 p-8 lg:p-12">
           <div className="grid lg:grid-cols-2 gap-8">
+            {/* Left side */}
             <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
               <div className="relative">
-                {/* profile image */}
-                <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden shadow-elevation-2 ring-4 ring-background">
-                  <Image
-                    src={profileData.profileImage}
-                    alt={`${profileData.name} - headshot`}
-                    className="w-full h-full object-cover"
-                  />
+                {/* profile name marquee in circle */}
+                <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden shadow-elevation-2 ring-4 ring-background flex flex-col justify-center items-center bg-gray-200 relative">
+                  {/* Line 1 */}
+                  <div className="w-full whitespace-nowrap flex animate-marquee-slow">
+                    <p className="text-gray-400 font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                    <p className="text-gray-400 font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                  </div>
+
+                  {/* Line 2 */}
+                  <div className="w-full whitespace-nowrap flex animate-marquee-reverse">
+                    <p className="text-gray-300 font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                    <p className="text-gray-300 font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                  </div>
+
+                  {/* Line 3 */}
+                  <div className="w-full whitespace-nowrap flex animate-marquee">
+                    <p className="text-gray-400 font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                    <p className="text-gray-400 font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                  </div>
+
+                  {/* Line 4 */}
+                  <div className="w-full whitespace-nowrap flex animate-marquee-reverse-slow">
+                    <p className="text-gray-300 font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                    <p className="text-gray-300 font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                  </div>
+
+                  {/* Line 5 */}
+                  <div className="w-full whitespace-nowrap flex animate-marquee-fast">
+                    <p className="text-gray-400 font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                    <p className="text-gray-400 font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                  </div>
                 </div>
+
 
                 {/* social links orbit */}
                 <div className="absolute inset-0 flex items-center justify-center animate-spin-slow">
                   {profileData.socialLinks.map((link, i) => {
                     const IconComp = iconMap[link.icon];
-                    const angle = (i / profileData.socialLinks.length) * 360 - 90; // position around circle
+                    const angle = (i / profileData.socialLinks.length) * 360 - 90;
                     const radius = 85;
 
                     const x = Math.cos((angle * Math.PI) / 180) * radius;
@@ -176,7 +222,6 @@ const Home = () => {
                           transform: `translate(${x}px, ${y}px)`,
                         }}
                       >
-                        {/* counter-rotate the icon so it stays upright */}
                         <div className="p-2 bg-white rounded-full shadow-md hover:bg-accent/10 transition animate-counter-spin">
                           <IconComp size={18} className="text-accent" />
                         </div>
@@ -199,10 +244,7 @@ const Home = () => {
               </div>
 
               <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-                <Button
-                  variant="default"
-                  onClick={handleDownloadResume}
-                >
+                <Button variant="default" onClick={handleDownloadResume}>
                   <LuDownload className="mr-1" size={18} />
                   Download Resume
                 </Button>
@@ -220,7 +262,6 @@ const Home = () => {
                   <div className="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 top-full left-1/2 -translate-x-1/2 mt-2 w-44 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2">
                     <div className="relative p-2 bg-gray-900/95 text-white text-sm rounded-md shadow-lg text-center">
                       For Quick Response
-                      {/* Arrow pointing up */}
                       <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-gray-900/95 rotate-45"></div>
                     </div>
                   </div>
@@ -239,7 +280,7 @@ const Home = () => {
                   return (
                     <div
                       key={i}
-                      className="flex items-start space-x-4 p-4 bg-muted rounded-lg"
+                      className="flex items-start space-x-4 p-4 bg-gray-200 rounded-lg"
                     >
                       <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
                         <IconComp size={20} className="text-accent" />
@@ -259,6 +300,7 @@ const Home = () => {
             </div>
           </div>
         </section>
+
 
 
         {/* QUICK STATS */}

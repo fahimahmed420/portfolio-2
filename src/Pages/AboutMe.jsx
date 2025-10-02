@@ -10,8 +10,8 @@ const AboutMe = () => {
     image: "https://i.ibb.co.com/mrc8BGvS/IMG-1593.jpg",
     location: "Dhaka, Bangladesh",
     experience: "8 months Learning Experience",
-    email: "fahim@example.com",
-    phone: "+880 1234-567890",
+    email: "fahim.ahmed.portfolio@gmail.com",
+    phone: "+880 1774433063",
     coreValues: ["Innovation", "Collaboration", "Quality", "Learning"]
   };
 
