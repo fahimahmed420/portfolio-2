@@ -70,8 +70,8 @@ export default function Timeline() {
             <FaBriefcase />
           </div>
           <div>
-            <h1 className="text-3xl font-semibold text-neutral-800">Life Timeline</h1>
-            <p className="text-neutral-500 text-sm">Key milestones & transitions</p>
+            <h1 className="text-3xl font-semibold text-primary">Life Timeline</h1>
+            <p className="text-secondary text-sm">Key milestones & transitions</p>
           </div>
         </div>
 
@@ -102,39 +102,39 @@ const TimelineItem = ({ item }) => {
   return (
     <div className="relative p-6">
       {/* Container for the icon on the timeline */}
-      <div className="absolute top-0 -left-1 z-10 p-2 bg-white text-blue-600 rounded-full border-4 border-neutral-100 shadow-md">
+      <div className="absolute top-0 -left-1 z-10 p-2 bg-white text-primary rounded-full border-4 border-neutral-100 shadow-md">
         {item.icon}
       </div>
 
       {/* The timeline card content. The hover effect is added here. */}
-      <div className="ml-10 p-6 bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] cursor-pointer">
+      <div className="ml-10 p-6 bg-white rounded-xl transition transform hover:-translate-y-1 hover:shadow-xl cursor-pointer">
         <div className="flex justify-between items-start" onClick={toggleOpen}>
           <div>
-            <h3 className="text-lg font-semibold text-neutral-800">{item.title}</h3>
-            <p className="text-sm text-neutral-500">{item.year}</p>
+            <h3 className="text-lg font-semibold text-primary">{item.title}</h3>
+            <p className="text-sm text-secondary">{item.year}</p>
           </div>
           {/* Chevron icon to indicate expand/collapse state */}
-          <div className="text-neutral-500 transition-transform duration-300">
+          <div className="text-primary transition-transform duration-300">
             {isOpen ? <ChevronUp /> : <ChevronDown />}
           </div>
         </div>
 
-        <p className="mt-4 text-neutral-600">{item.description}</p>
+        <p className="mt-4 text-secondary">{item.description}</p>
 
         {/* Additional information tags like category and location */}
         <div className="mt-4 flex gap-2 text-xs font-medium">
-          <span className="bg-neutral-200 text-neutral-600 px-2 py-1 rounded-full">{item.category}</span>
+          <span className="bg-gray-200 text-primary px-2 py-1 rounded-full">{item.category}</span>
           {item.location && (
-            <span className="bg-neutral-200 text-neutral-600 px-2 py-1 rounded-full">{item.location}</span>
+            <span className="bg-gray-200 text-primary px-2 py-1 rounded-full">{item.location}</span>
           )}
         </div>
 
         {/* Expandable details section. Renders only if isOpen is true. */}
         <div className={`mt-4 overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-          <ul className="list-disc list-inside space-y-2 text-neutral-600">
+          <ul className="list-disc list-inside space-y-2 text-secondary">
             {item.details.map((detail, index) => (
               <li key={index} className="flex items-start">
-                <span className="text-blue-500 mr-2">&rarr;</span>
+                <span className="text-primary mr-2">&rarr;</span>
                 <span>{detail}</span>
               </li>
             ))}
