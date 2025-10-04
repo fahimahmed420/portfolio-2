@@ -5,6 +5,7 @@ import {
   Code, Database, Layers, Code2, Target, BookOpen, Monitor, Server, Wrench, Palette,
   Briefcase, Building2, GraduationCap, User, School, Coffee,Lightbulb
 } from "lucide-react";
+import TargetCursor from "./ui/TargetCursor";
 
 const iconMap = {
   user: FaUser,
@@ -179,6 +180,10 @@ export default function TabPreviewSection() {
 
   return (
     <div className="max-w-4xl mx-auto px-4">
+       <TargetCursor
+        spinDuration={2}
+        hideDefaultCursor={true}
+      />
       {/* Tabs */}
       <div className="flex flex-wrap justify-center gap-6 sm:gap-10 border-b border-gray-300 pb-3 mb-6">
         {tabs.map((tab, idx) => {
@@ -189,7 +194,7 @@ export default function TabPreviewSection() {
               href={tab.link}
               onMouseEnter={() => setHoverIndex(idx)}
               onMouseLeave={() => setHoverIndex(null)}
-              className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 cursor-pointer transition-colors duration-200 text-sm sm:text-base"
+              className="flex items-center cursor-target space-x-2 text-gray-600 hover:text-blue-600 cursor-pointer transition-colors duration-200 text-sm sm:text-base"
             >
               <Icon className="text-lg sm:text-xl" />
               <span className="font-medium">{tab.label}</span>

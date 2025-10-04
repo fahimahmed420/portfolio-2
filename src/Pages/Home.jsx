@@ -223,7 +223,7 @@ const Home = () => {
                           transform: `translate(${x}px, ${y}px)`,
                         }}
                       >
-                        <div className="p-2 bg-white rounded-full shadow-md hover:bg-accent/10 transition animate-counter-spin">
+                        <div className="p-2 bg-white cursor-target rounded-full shadow-md hover:bg-accent/10 transition animate-counter-spin">
                           <IconComp size={18} className="text-accent" />
                         </div>
                       </a>
@@ -319,7 +319,7 @@ const Home = () => {
               return (
                 <div
                   key={i}
-                  className="text-center space-y-3 p-4 rounded-lg bg-muted/50 transition transform hover:-translate-y-1 cursor-cell"
+                  className="text-center cursor-target space-y-3 p-4 rounded-lg bg-muted/50 transition transform hover:-translate-y-1 cursor-cell"
                 >
                   <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
                     <IconComp size={24} className="text-accent" />
@@ -363,7 +363,7 @@ const Home = () => {
                 href={p.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-muted/50 rounded-lg overflow-hidden transition transform hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+                className="group cursor-target bg-muted/50 rounded-lg overflow-hidden transition transform hover:-translate-y-1 hover:shadow-xl cursor-pointer"
               >
                 <div className="aspect-video overflow-hidden">
                   <Image
