@@ -33,22 +33,22 @@ const AboutMe = () => {
           </div>
 
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-gray-600">
+            <div className="flex items-center gap-2 text-secondary">
               <LuMapPin /> <span>{profile.location}</span>
             </div>
-            <div className="flex items-center gap-2 text-gray-600">
+            <div className="flex items-center gap-2 text-secondary">
               <LuCalendar /> <span>{profile.experience}</span>
             </div>
-            <div className="flex items-center gap-2 text-gray-600">
+            <div className="flex items-center gap-2 text-secondary">
               <LuMail /> <span>{profile.email}</span>
             </div>
-            <div className="flex items-center gap-2 text-gray-600">
+            <div className="flex items-center gap-2 text-secondary">
               <LuPhone /> <span>{profile.phone}</span>
             </div>
           </div>
 
           <div>
-            <h3 className="font-semibold text-gray-700 mb-2">Core Values</h3>
+            <h3 className="font-semibold text-primary mb-2">Core Values</h3>
             <ul className="flex flex-wrap gap-2">
               {profile.coreValues.map((val, i) => (
                 <li key={i} className="bg-gray-200 text-primary px-3 py-1 rounded-full text-xs font-medium">
@@ -64,22 +64,22 @@ const AboutMe = () => {
           {/* Story Content */}
           <main className="flex-1 p-8 space-y-8 bg-gray-100 shadow rounded-lg">
             <section>
-              <h2 className="text-2xl font-semibold text-gray-800 mb-2">My Story</h2>
-              <p className="text-gray-700 text-sm leading-relaxed">
+              <h2 className="text-2xl font-semibold text-primary mb-2">My Story</h2>
+              <p className="text-secondary text-sm leading-relaxed">
                 I'm a passionate full-stack developer with 8 months of experience learning web development. I focus on building modern web applications with React, Firebase, Node.js, and more.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-gray-800 mb-2">What Drives Me</h2>
-              <p className="italic text-gray-700 text-sm">
+              <h2 className="text-xl font-semibold text-primary mb-2">What Drives Me</h2>
+              <p className="italic text-secondary  text-sm">
                 "I'm driven by the belief that technology should empower people and solve real-world problems. Every line of code I write is an opportunity to make someone's day a little bit better."
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-gray-800 mb-2">Professional Philosophy</h2>
-              <ul className="list-disc pl-5 text-gray-700 text-sm space-y-1">
+              <h2 className="text-xl font-semibold text-primary mb-2">Professional Philosophy</h2>
+              <ul className="list-disc pl-5 text-secondary text-sm space-y-1">
                 <li>User experience should always come first in any technical decision</li>
                 <li>Clean, maintainable code is an investment in the future</li>
                 <li>Continuous learning is essential in our rapidly evolving field</li>

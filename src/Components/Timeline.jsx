@@ -9,8 +9,8 @@ export default function Timeline() {
     {
       id: 1,
       icon: <FaBriefcase />,
-      title: "Senior Full-Stack Developer at TechCorp",
-      year: "2024",
+      title: "MERN-Stack Developer",
+      year: "2025",
       description: "Leading a team of 6 developers in building next-generation SaaS platforms",
       category: "Career",
       location: "San Francisco, CA",

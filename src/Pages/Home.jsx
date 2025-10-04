@@ -24,6 +24,7 @@ import {
 } from "react-icons/lu";
 import { FaWhatsapp } from "react-icons/fa";
 import TabPreviewSection from "../Components/TabPreviewSection";
+import TextType from "../Components/ui/TextType";
 
 const iconMap = {
   Award: LuAward,
@@ -239,7 +240,11 @@ const Home = () => {
                   {profileData.currentTitle}
                 </p>
                 <p className="font-caption text-text-secondary max-w-md">
-                  {profileData.tagline}
+                  <TextType
+                    text= {profileData.tagline}
+                    typingSpeed={50}
+                    pauseDuration={1500}
+                  />
                 </p>
               </div>
 
