@@ -323,7 +323,7 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
         >
             <div
                 ref={dotRef}
-                className="absolute left-1/2 top-1/2 w-1 h-1 bg-white rounded-full transform -translate-x-1/2 -translate-y-1/2"
+                className="absolute left-1/2 top-1/2 w-1 h-1 bg-black rounded-full transform -translate-x-1/2 -translate-y-1/2"
                 style={{ willChange: 'transform' }}
             />
             <div

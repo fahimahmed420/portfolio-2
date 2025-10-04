@@ -9,7 +9,7 @@ import { VscDatabase } from "react-icons/vsc";
 const SkillBadge = ({ icon, label }) => (
   <motion.span
     whileHover={{ scale: 1.05 }}
-    className="flex items-center gap-2 bg-white px-3 py-2 rounded-md shadow text-sm text-gray-800 hover:text-black hover:shadow-md transition"
+    className="flex items-center cursor-target gap-2 bg-white px-3 py-2 rounded-md shadow text-sm text-gray-800 hover:text-black hover:shadow-md transition"
   >
     {icon} {label}
   </motion.span>
