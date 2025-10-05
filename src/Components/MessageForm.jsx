@@ -33,10 +33,10 @@ const MessageForm = () => {
 
         emailjs
             .sendForm(
-                "service_14w7z3f",     // Your Service ID
-                "template_nzu7iwd",   // Your Template ID
+                "service_14w7z3f",     // Service ID
+                "template_nzu7iwd",   // Template ID
                 form.current,
-                "OPWTCVfkvwsNbUOcK"   // Your Public Key
+                "OPWTCVfkvwsNbUOcK"   // Public Key
             )
             .then(
                 () => {
@@ -75,7 +75,7 @@ const MessageForm = () => {
                             name="from_name"
                             id="from_name"
                             placeholder="Enter your full name"
-                            className="mt-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-white rounded-md bg-white p-2"
+                            className="mt-1 cursor-target shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-white rounded-md bg-white p-2"
                             required
                         />
                     </div>
@@ -92,7 +92,7 @@ const MessageForm = () => {
                             name="from_email"
                             id="from_email"
                             placeholder="your.email@example.com"
-                            className="mt-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-white rounded-md bg-white p-2"
+                            className="mt-1 cursor-target shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-white rounded-md bg-white p-2"
                             required
                         />
                     </div>
@@ -111,7 +111,7 @@ const MessageForm = () => {
                         name="subject"
                         id="subject"
                         placeholder="What's this about?"
-                        className="mt-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-white rounded-md bg-white p-2"
+                        className="mt-1 cursor-target shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-white rounded-md bg-white p-2"
                         required
                     />
                 </div>
@@ -128,7 +128,7 @@ const MessageForm = () => {
                         <select
                             id="project_type"
                             name="project_type"
-                            className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md bg-white"
+                            className="mt-1 cursor-target block w-full pl-3 pr-10 py-2 text-base border-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md bg-white"
                         >
                             <option>Select project type</option>
                             <option>Web Development</option>
@@ -149,7 +149,7 @@ const MessageForm = () => {
                         <select
                             id="budget_range"
                             name="budget_range"
-                            className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md bg-white"
+                            className="mt-1 cursor-target block w-full pl-3 pr-10 py-2 text-base border-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md bg-white"
                         >
                             <option>Select budget range</option>
                             <option>Under $100</option>
@@ -171,7 +171,7 @@ const MessageForm = () => {
                         <select
                             id="timeline"
                             name="timeline"
-                            className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md bg-white"
+                            className="mt-1 cursor-target block w-full pl-3 pr-10 py-2 text-base border-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md bg-white"
                         >
                             <option>Select timeline</option>
                             <option>ASAP</option>
@@ -197,7 +197,7 @@ const MessageForm = () => {
                         name="message"
                         rows="4"
                         placeholder="Tell me about your project, goals, and how I can help..."
-                        className="mt-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-white rounded-md bg-white p-2"
+                        className="mt-1 cursor-target shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-white rounded-md bg-white p-2"
                         required
                     ></textarea>
                 </div>
@@ -207,7 +207,7 @@ const MessageForm = () => {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-[#2d485f] hover:bg-[#233849] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        className="inline-flex cursor-target items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-[#2d485f] hover:bg-[#233849] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
                         {loading ? "Sending..." : "Send Message"}
                         <svg

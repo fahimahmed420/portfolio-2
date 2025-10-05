@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -76,22 +77,24 @@ const Projects = () => {
       <div className="hidden 2xl:flex fixed right-8 top-1/2 -translate-y-1/2 flex-col space-y-6 z-10">
         {projects[activeIndex] && (
           <>
-            <a
+            <motion.a
               href={projects[activeIndex].sourceCode}
               target="_blank"
               rel="noopener noreferrer"
+              whileHover={{ scale: 1.1 }}
               className="hover:text-primary rotate-90 origin-right text-secondary cursor-target"
             >
               Git
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href={projects[activeIndex].liveLink}
               target="_blank"
               rel="noopener noreferrer"
+              whileHover={{ scale: 1.1 }}
               className="hover:text-primary rotate-90 origin-right text-secondary cursor-target"
             >
               Live
-            </a>
+            </motion.a>
           </>
         )}
       </div>
@@ -104,7 +107,7 @@ const Projects = () => {
           data-index={index}
           className="h-screen snap-start flex items-center"
         >
-          <div className="pt-16 max-w-7xl mx-auto px-5 lg:px-8 py-8 w-full flex flex-col lg:flex-row items-center justify-between space-y-6 lg:space-y-0">
+          <div className="max-w-7xl mx-auto px-5 lg:px-8 w-full flex flex-col lg:flex-row items-center justify-between space-y-6 lg:space-y-0">
             {/* Left Content */}
             <div className="flex-1 flex flex-col justify-center space-y-6">
               <div className="flex items-center space-x-4">
@@ -118,7 +121,7 @@ const Projects = () => {
                     href={project.sourceCode}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3 py-1 rounded-md border border-gray-300 text-secondary hover:bg-black hover:text-white transition"
+                    className="px-3 py-1 cursor-target rounded-md border border-gray-300 text-secondary hover:bg-black hover:text-white transition"
                   >
                     Git
                   </a>
@@ -126,7 +129,7 @@ const Projects = () => {
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3 py-1 rounded-md border border-gray-300 text-secondary hover:bg-black hover:text-white transition"
+                    className="px-3 py-1 rounded-md cursor-target border border-gray-300 text-secondary hover:bg-black hover:text-white transition"
                   >
                     Live
                   </a>
@@ -170,7 +173,7 @@ const Projects = () => {
           <button
             key={i}
             onClick={() => scrollToProject(i)}
-            className={`h-2 w-6 rounded-full transition-all ${
+            className={`h-2 w-6 rounded-full transition-all cursor-target ${
               activeIndex === i ? "bg-black w-12" : "bg-gray-400"
             }`}
           ></button>
