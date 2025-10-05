@@ -159,6 +159,23 @@ const Projects = () => {
           </div>
         </section>
       ))}
+
+      {/* ===================== */}
+      {/* Small Screen Navigation */}
+      {/* ===================== */}
+
+      {/* Bottom horizontal bar */}
+      <div className="flex 2xl:hidden overflow-x-auto space-x-4 px-5 py-2 fixed bottom-0 w-full bg-white shadow-md z-20">
+        {projects.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => scrollToProject(i)}
+            className={`h-2 w-6 rounded-full transition-all ${
+              activeIndex === i ? "bg-black w-12" : "bg-gray-400"
+            }`}
+          ></button>
+        ))}
+      </div>
     </div>
   );
 };
