@@ -16,7 +16,7 @@ const Projects = () => {
     document.title = "Projects | Fahim Ahmed";
   }, []);
 
-  // Track which section is visible
+  // Track visible section
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -42,28 +42,45 @@ const Projects = () => {
 
   return (
     <div className="h-screen w-full overflow-y-scroll scrollbar-hide snap-y snap-mandatory bg-white relative">
-      {/* Left Counter */}
-      <div className="fixed left-8 top-1/2 -translate-y-1/2 flex flex-col space-y-4 z-10">
+      {/* Left Counter (only visible on xl+) */}
+      <div className="hidden 2xl:flex fixed left-8 top-1/2 -translate-y-1/2 flex-col space-y-4 z-10 items-center">
         {projects.map((_, i) => (
           <button
             key={i}
             onClick={() => scrollToProject(i)}
-            className={`h-[2px] w-8 transition-all ${
-              activeIndex === i ? "bg-blue-500 w-12" : "bg-black"
+            className={`h-[4px] w-8 transition-all cursor-target ${
+              activeIndex === i ? "bg-black w-12" : "bg-gray-400"
             }`}
           ></button>
         ))}
+
+        {/* Scroll hint arrows */}
+        {activeIndex === 0 && (
+          <div className="absolute -bottom-60 flex items-center">
+            <span className="text-sm text-gray-500 rotate-90 inline-flex items-center">
+              Scroll Down ───────────────▷
+            </span>
+          </div>
+        )}
+
+        {activeIndex === projects.length - 1 && (
+          <div className="absolute -top-60 flex items-center">
+            <span className="text-sm text-gray-500 -rotate-90 inline-flex items-center">
+              Scroll Up ───────────────▷
+            </span>
+          </div>
+        )}
       </div>
 
-      {/* Right Links (per project, update dynamically) */}
-      <div className="fixed right-8 top-1/2 -translate-y-1/2 flex flex-col space-y-6 z-10">
+      {/* Right Rotated Links (only on xl+) */}
+      <div className="hidden 2xl:flex fixed right-8 top-1/2 -translate-y-1/2 flex-col space-y-6 z-10">
         {projects[activeIndex] && (
           <>
             <a
               href={projects[activeIndex].sourceCode}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-primary rotate-90 origin-right text-secondary"
+              className="hover:text-primary rotate-90 origin-right text-secondary cursor-target"
             >
               Git
             </a>
@@ -71,7 +88,7 @@ const Projects = () => {
               href={projects[activeIndex].liveLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-primary rotate-90 origin-right text-secondary"
+              className="hover:text-primary rotate-90 origin-right text-secondary cursor-target"
             >
               Live
             </a>
@@ -90,9 +107,32 @@ const Projects = () => {
           <div className="pt-16 max-w-7xl mx-auto px-5 lg:px-8 py-8 w-full flex flex-col lg:flex-row items-center justify-between space-y-6 lg:space-y-0">
             {/* Left Content */}
             <div className="flex-1 flex flex-col justify-center space-y-6">
-              <h2 className="text-4xl lg:text-5xl font-bold text-primary">
-                {project.title}
-              </h2>
+              <div className="flex items-center space-x-4">
+                <h2 className="text-4xl lg:text-5xl font-bold text-primary">
+                  {project.title}
+                </h2>
+
+                {/* Git/Live links (visible on <xl screens only) */}
+                <div className="flex 2xl:hidden space-x-3 text-sm">
+                  <a
+                    href={project.sourceCode}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1 rounded-md border border-gray-300 text-secondary hover:bg-black hover:text-white transition"
+                  >
+                    Git
+                  </a>
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1 rounded-md border border-gray-300 text-secondary hover:bg-black hover:text-white transition"
+                  >
+                    Live
+                  </a>
+                </div>
+              </div>
+
               <p className="max-w-md text-secondary">{project.description}</p>
 
               {/* Tech stack */}
@@ -100,7 +140,7 @@ const Projects = () => {
                 {project.tech.map((t, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 text-sm bg-gray-200 rounded-md text-primary"
+                    className="px-3 py-1 text-sm bg-gray-200 rounded-md text-primary cursor-target"
                   >
                     {t}
                   </span>
