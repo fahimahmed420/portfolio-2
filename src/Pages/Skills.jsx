@@ -17,11 +17,11 @@ const SkillBadge = ({ icon, label }) => (
 
 const Skills = () => {
   return (
-    <div className="min-h-screen bg-white text-gray-900 flex flex-col items-center pt-16 py-8">
+    <div className="min-h-screen bg-white text-primary flex flex-col items-center px-5 pt-16 py-8">
       <h1 className="text-4xl md:text-5xl font-bold mb-12">Skills</h1>
 
       {/* Most Used Stack */}
-      <div className="bg-gray-100 rounded-2xl shadow p-6 md:p-8 mb-12 max-w-3xl text-center">
+      <div className="bg-gray-100 rounded-2xl shadow p-6 md:p-8 mb-12 max-w-3xl  text-center">
         <h2 className="text-2xl md:text-3xl font-semibold mb-3">My Go-To Tech Stack</h2>
         <p className="text-gray-700 text-sm md:text-base">
           I primarily build full-stack applications using{" "}
@@ -33,7 +33,7 @@ const Skills = () => {
       </div>
 
       {/* Main Skill Categories */}
-      <div className="grid md:grid-cols-3 gap-6 md:gap-8 w-full max-w-7xl mx-auto px-5 lg:px-8">
+      <div className="grid md:grid-cols-3 gap-6 md:gap-8 w-full max-w-7xl mx-auto lg:px-8">
         
         {/* Languages & Tools */}
         <div className="bg-gray-100 rounded-xl p-4 md:p-6 shadow">

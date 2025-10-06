@@ -140,7 +140,7 @@ const Home = () => {
   const ExternalIcon = iconMap["ExternalLink"];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <main className="pt-16 max-w-7xl mx-auto px-5 lg:px-8 py-8">
         {/* HERO SECTION */}
         <section className="bg-white rounded-xl shadow-elevation-2 overflow-hidden mb-12 p-8 lg:p-12">
@@ -233,13 +233,13 @@ const Home = () => {
               </div>
 
               <div className="space-y-3">
-                <h1 className="font-heading text-3xl lg:text-4xl font-bold text-primary">
+                <h1 className="text-3xl lg:text-4xl font-bold text-primary mt-4">
                   {profileData.name}
                 </h1>
-                <p className="font-body text-lg text-secondary font-medium">
+                <p className="text-lg text-secondary font-medium">
                   {profileData.currentTitle}
                 </p>
-                <p className="font-caption text-text-secondary max-w-md">
+                <p className="text-text-secondary max-w-md">
                   <TextType
                     text= {profileData.tagline}
                     typingSpeed={50}
@@ -276,7 +276,7 @@ const Home = () => {
 
             {/* highlights */}
             <div className="space-y-6">
-              <h2 className="font-heading text-2xl font-semibold text-primary mb-6">
+              <h2 className="text-2xl font-semibold text-primary mb-6">
                 Professional Highlights
               </h2>
               <div className="grid gap-4">
@@ -285,16 +285,16 @@ const Home = () => {
                   return (
                     <div
                       key={i}
-                      className="flex items-start space-x-4 p-4 bg-gray-200 rounded-lg"
+                      className="flex items-start space-x-4 p-4 bg-light rounded-lg"
                     >
                       <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
                         <IconComp size={20} className="text-accent" />
                       </div>
                       <div>
-                        <h3 className="font-body font-semibold text-primary text-sm">
+                        <h3 className="font-semibold text-primary text-sm">
                           {h.title}
                         </h3>
-                        <p className="font-caption text-text-secondary text-sm">
+                        <p className="text-secondary text-sm">
                           {h.description}
                         </p>
                       </div>
@@ -309,8 +309,8 @@ const Home = () => {
 
 
         {/* QUICK STATS */}
-        <section className="bg-gray-100 rounded-xl shadow-elevation-1 p-6 mb-12">
-          <h2 className="font-heading text-xl font-semibold text-primary mb-6">
+        <section className="bg-light rounded-xl shadow-elevation-1 p-6 mb-12">
+          <h2 className="text-xl font-semibold text-primary mb-6">
             Quick Stats
           </h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -325,10 +325,10 @@ const Home = () => {
                     <IconComp size={24} className="text-accent" />
                   </div>
                   <div>
-                    <div className="font-heading text-2xl font-bold">
+                    <div className="text-2xl font-bold">
                       {stat.value}
                     </div>
-                    <div className="font-caption text-sm">{stat.label}</div>
+                    <div className="text-sm">{stat.label}</div>
                   </div>
                 </div>
               );
@@ -337,14 +337,14 @@ const Home = () => {
         </section>
 
         {/* NOTEBOOK TABS */}
-        <section className="bg-gray-100 rounded-xl shadow-elevation-1 p-6 mb-12">
+        <section className="bg-light rounded-xl shadow-elevation-1 p-6 mb-12">
           <TabPreviewSection />
         </section>
 
         {/* RECENT WORK */}
-        <section className="bg-gray-100 rounded-xl shadow-elevation-1 p-6 mb-12">
+        <section className="bg-light rounded-xl shadow-elevation-1 p-6 mb-12">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="font-heading text-xl font-semibold text-primary">
+            <h2 className="text-xl font-semibold text-primary">
               Recent Work
             </h2>
             <Button
@@ -377,12 +377,12 @@ const Home = () => {
                 </div>
                 <div className="p-4 space-y-3">
                   <div className="flex items-start justify-between">
-                    <h3 className="font-body font-semibold text-primary text-sm">
+                    <h3 className="font-semibold text-primary text-sm">
                       {p.title}
                     </h3>
                     <ExternalIcon size={14} />
                   </div>
-                  <p className="font-caption text-xs">{p.description}</p>
+                  <p className="text-xs">{p.description}</p>
                 </div>
               </a>
             ))}
@@ -390,21 +390,21 @@ const Home = () => {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="bg-gray-100 rounded-xl shadow-elevation-1 p-6 mb-12">
-          <h2 className="font-heading text-xl font-semibold text-primary mb-6">
+        <section className="bg-light rounded-xl p-6 mb-12">
+          <h2 className="text-xl font-semibold text-primary mb-6">
             What People Say
           </h2>
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="bg-muted/50 rounded-lg p-6 space-y-4 mb-4"
+              className="rounded-lg p-6 space-y-4 mb-4"
             >
-              <p className="font-caption">"{t.content}"</p>
+              <p className="text-primary">"{t.content}"</p>
               <div className="flex items-center space-x-4">
                 <Image src={t.avatar} alt={t.name} className="w-12 h-12 rounded-full" />
                 <div>
-                  <h4 className="font-body font-semibold">{t.name}</h4>
-                  <p className="font-caption text-xs">
+                  <h4 className="font-semibold">{t.name}</h4>
+                  <p className="text-xs">
                     {t.position} at {t.company}
                   </p>
                 </div>

@@ -194,7 +194,7 @@ export default function TabPreviewSection() {
               href={tab.link}
               onMouseEnter={() => setHoverIndex(idx)}
               onMouseLeave={() => setHoverIndex(null)}
-              className="flex items-center cursor-target space-x-2 text-gray-600 hover:text-blue-600 cursor-pointer transition-colors duration-200 text-sm sm:text-base"
+              className="flex items-center cursor-target space-x-2 text-gray-600 hover:text-black cursor-pointer transition-colors duration-200 text-sm sm:text-base"
             >
               <Icon className="text-lg sm:text-xl" />
               <span className="font-medium">{tab.label}</span>

@@ -25,10 +25,7 @@ const ContactMe = () => {
 
   return (
     <div className="relative min-h-screen bg-white text-gray-900">
-
-      {/* ===================== */}
       {/* Page Headline */}
-      {/* ===================== */}
       <div className="text-center pt-16 pb-8">
         <h1 className="text-4xl md:text-5xl font-bold">Contact & Connect Hub</h1>
         <p className="mt-4 text-gray-500 text-sm md:text-base max-w-2xl mx-auto">
@@ -39,11 +36,8 @@ const ContactMe = () => {
         </div>
       </div>
 
-      {/* ===================== */}
       {/* Main Content */}
-      {/* ===================== */}
       <div className="max-w-7xl mx-auto px-5 lg:px-8 py-8 space-y-8">
-
         {/* Contact Information */}
         <div className="bg-gray-100 rounded-2xl shadow p-6 md:p-8">
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 flex items-center">
@@ -53,7 +47,6 @@ const ContactMe = () => {
             {/* Email */}
             <MotionCard className="bg-white rounded-xl shadow p-4">
               <div className="flex items-center">
-                <LuMail className="h-6 w-6 mr-2 text-gray-600" />
                 <div>
                   <dt className="text-sm font-medium text-gray-500">Email</dt>
                   <dd className="mt-1 text-gray-900">fahim.ahmed.portfolio@gmail.com</dd>
@@ -65,7 +58,6 @@ const ContactMe = () => {
             {/* Phone */}
             <MotionCard className="bg-white rounded-xl shadow p-4">
               <div className="flex items-center">
-                <LuPhone className="h-6 w-6 mr-2 text-gray-600" />
                 <div>
                   <dt className="text-sm font-medium text-gray-500">Phone</dt>
                   <dd className="mt-1 text-gray-900">+8801774433063</dd>
@@ -77,7 +69,6 @@ const ContactMe = () => {
             {/* Location */}
             <MotionCard className="bg-white rounded-xl shadow p-4">
               <div className="flex items-center">
-                <LuMapPin className="h-6 w-6 mr-2 text-gray-600" />
                 <div>
                   <dt className="text-sm font-medium text-gray-500">Location</dt>
                   <dd className="mt-1 text-gray-900">Savar, Dhaka</dd>
@@ -89,7 +80,6 @@ const ContactMe = () => {
             {/* Availability */}
             <MotionCard className="bg-white rounded-xl shadow p-4">
               <div className="flex items-center">
-                <LuList className="h-6 w-6 mr-2 text-gray-600" />
                 <div>
                   <dt className="text-sm font-medium text-gray-500">Availability</dt>
                   <dd className="mt-1 text-gray-900">Available for new projects</dd>

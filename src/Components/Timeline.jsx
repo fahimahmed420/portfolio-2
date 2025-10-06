@@ -1,65 +1,66 @@
 import React, { useState } from 'react';
-import { FaBriefcase, FaCode, FaCertificate, FaLaptopCode } from 'react-icons/fa';
+import { FaBriefcase, FaCode, FaLaptopCode, FaBook, FaGraduationCap } from 'react-icons/fa';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 // The main App component that renders the entire timeline.
 export default function Timeline() {
   // Sample data for the timeline. You can add or remove items here.
-  const timelineData = [
-    {
-      id: 1,
-      icon: <FaBriefcase />,
-      title: "MERN-Stack Developer",
-      year: "2025",
-      description: "Leading a team of 6 developers in building next-generation SaaS platforms",
-      category: "Career",
-      location: "San Francisco, CA",
-      details: [
-        "Architected microservices infrastructure serving 100K+ users",
-        "Implemented CI/CD pipelines reducing deployment time by 60%",
-        "Mentored 3 junior developers and conducted technical interviews"
-      ],
-    },
-    {
-      id: 2,
-      icon: <FaCode />,
-      title: "Full-Stack Developer at StartupXYZ",
-      year: "2022",
-      description: "Built the core platform from MVP to Series A funding",
-      category: "Career",
-      location: "Remote",
-      details: [
-        "Developed and maintained RESTful APIs using Node.js and Express",
-        "Created a responsive frontend with React and TypeScript",
-        "Integrated third-party services for payments and analytics"
-      ],
-    },
-    {
-      id: 3,
-      icon: <FaCertificate />,
-      title: "AWS Solutions Architect Certification",
-      year: "2021",
-      description: "Achieved professional certification in cloud architecture",
-      category: "Education",
-      details: [
-        "Studied and mastered core AWS services including EC2, S3, and VPC",
-        "Gained hands-on experience in building scalable and secure cloud solutions",
-      ],
-    },
-    {
-      id: 4,
-      icon: <FaLaptopCode />,
-      title: "Frontend Developer at DesignStudio",
-      year: "2020",
-      description: "Developed and maintained user-facing web applications",
-      category: "Career",
-      details: [
-        "Collaborated with designers to translate mockups into functional web pages",
-        "Optimized application performance, reducing page load times by 40%",
-        "Implemented state management using Redux and Context API"
-      ],
-    },
-  ];
+ const timelineData = [
+  {
+    id: 1,
+    icon: <FaLaptopCode />,
+    title: "Full-Stack Developer",
+    year: "2025 ( Nov-Apr )",
+    description: "Enrolled in Programming Hero Level-2 (Full-Stack Development) course",
+    category: "Course",
+    location: "Remote",
+    details: [
+      "Learning advanced concepts in Next.js, Redux, and backend optimization",
+      "Building real-world SaaS projects with authentication and payment integration",
+      "Collaborating with peers in team projects to simulate industry workflows",
+    ],
+  },
+  {
+    id: 2,
+    icon: <FaCode />,
+    title: "MERN-Stack Developer",
+    year: "2025 ( Jan-Aug )",
+    description: "Completed Programming Hero Level-1 (MERN-Stack Development) course",
+    category: "Course",
+    location: "Remote",
+    details: [
+      "Built full-stack web applications using MongoDB, Express.js, React, and Node.js",
+      "Developed REST APIs and integrated them with dynamic frontends",
+      "Worked on authentication, CRUD operations, and deployment to cloud platforms",
+    ],
+  },
+  {
+    id: 3,
+    icon: <FaGraduationCap />,
+    title: "City University",
+    year: "2019-2024",
+    description: "Completed Bachelor of Science (BSc) in Computer Science & Engineering",
+    category: "Education",
+    details: [
+      "Studied core subjects like Data Structures, Algorithms, DBMS, and Networking",
+      "Worked on academic projects in web development and cloud computing",
+      "Participated in workshops and seminars to strengthen technical skills",
+    ],
+  },
+  {
+    id: 4,
+    icon: <FaBook />,
+    title: "Meastro Crown Collage",
+    year: "2016-2018",
+    description: "Completed Higher Secondary Certificate (HSC) in Science",
+    category: "Education",
+    details: [
+      "Focused on Mathematics, Physics, and Computer Science",
+      "Built a strong foundation for problem-solving and analytical skills",
+      "Prepared for university entrance and higher education in CSE",
+    ],
+  },
+];
 
   return (
     <div className="bg-gray-100 rounded-lg p-6">
@@ -108,7 +109,7 @@ const TimelineItem = ({ item }) => {
 
       {/* The timeline card content. The hover effect is added here. */}
       <div className="ml-10 p-6 bg-white rounded-xl transition transform hover:-translate-y-1 hover:shadow-xl cursor-pointer">
-        <div className="flex justify-between items-start" onClick={toggleOpen}>
+        <div className="flex justify-between cursor-target items-start" onClick={toggleOpen}>
           <div>
             <h3 className="text-lg font-semibold text-primary">{item.title}</h3>
             <p className="text-sm text-secondary">{item.year}</p>
@@ -122,10 +123,10 @@ const TimelineItem = ({ item }) => {
         <p className="mt-4 text-secondary">{item.description}</p>
 
         {/* Additional information tags like category and location */}
-        <div className="mt-4 flex gap-2 text-xs font-medium">
-          <span className="bg-gray-200 text-primary px-2 py-1 rounded-full">{item.category}</span>
+        <div className="mt-4 flex gap-2 text-sm md:text-base">
+          <span className="bg-gray-100 text-primary px-2 py-1 rounded-md shadow">{item.category}</span>
           {item.location && (
-            <span className="bg-gray-200 text-primary px-2 py-1 rounded-full">{item.location}</span>
+            <span className="bg-gray-100 text-primary px-2 py-1 rounded-md shadow">{item.location}</span>
           )}
         </div>
 
