@@ -21,6 +21,7 @@ import {
   LuDownload,
   LuExternalLink,
   LuFacebook,
+  LuGraduationCap,
 } from "react-icons/lu";
 import { FaWhatsapp } from "react-icons/fa";
 import TabPreviewSection from "../Components/TabPreviewSection";
@@ -43,6 +44,7 @@ const iconMap = {
   Mail: LuMail,
   ArrowRight: LuArrowRight,
   ExternalLink: LuExternalLink,
+  GraduationCap: LuGraduationCap,
 };
 
 const Home = () => {
@@ -51,34 +53,34 @@ const Home = () => {
 
   const profileData = {
     name: "Fahim Ahmed",
-    currentTitle: "Full-Stack Developer & UI/UX Designer",
+    currentTitle: "Full-Stack Developer (MERN) | CSE Graduate",
     tagline:
-      "Aspiring full-stack developer with 8 months of hands-on experience in building dynamic web applications. I am passionate about creating user-friendly, responsive, and visually appealing interfaces while mastering backend development to deliver robust, efficient solutions.",
+      "Full-stack developer skilled in the MERN stack with a strong foundation in computer science. Completed Programming Hero Level-1 (MERN) and currently pursuing Level-2 to advance in modern web technologies. Passionate about building scalable, user-focused applications and continuously improving through hands-on projects.",
     profileImage: "https://i.ibb.co/mrc8BGvS/IMG-1593.jpg",
     highlights: [
       {
         icon: "Calendar",
-        title: "8 Months Learning Experience",
+        title: "Programming Hero Journey",
         description:
-          "Gained practical experience in building full-stack web applications using React, Node.js, Express, and MongoDB.",
+          "Completed Level-1 (MERN Stack Development) and enrolled in Level-2 (Full-Stack Development, 2025).",
+      },
+      {
+        icon: "GraduationCap",
+        title: "BSc in Computer Science & Engineering",
+        description:
+          "Graduated from City University with a focus on software development, algorithms, and cloud computing.",
       },
       {
         icon: "Award",
-        title: "3+ Completed Projects",
+        title: "Hands-On Projects",
         description:
-          "Delivered full-stack projects including portfolio sites, e-commerce platforms, and small team collaborations.",
-      },
-      {
-        icon: "Users",
-        title: "Collaborative & Adaptable",
-        description:
-          "Able to work effectively in teams, adapt to new technologies, and maintain a positive and solution-oriented attitude.",
+          "Developed full-stack applications including portfolio sites, e-commerce platforms, and collaborative projects.",
       },
       {
         icon: "TrendingUp",
         title: "Continuous Growth",
         description:
-          "Focused on improving performance and code quality through learning best practices and optimization techniques.",
+          "Dedicated to learning advanced frameworks, improving code quality, and staying updated with industry best practices.",
       },
     ],
     socialLinks: [
@@ -241,7 +243,7 @@ const Home = () => {
                 </p>
                 <p className="text-text-secondary max-w-md">
                   <TextType
-                    text= {profileData.tagline}
+                    text={profileData.tagline}
                     typingSpeed={50}
                     pauseDuration={1500}
                   />
