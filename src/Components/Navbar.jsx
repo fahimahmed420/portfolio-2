@@ -1,28 +1,64 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import { FaBookOpen, FaHome, FaUser, FaBriefcase, FaTools, FaFolderOpen, FaEnvelope, FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaBookOpen,
+  FaHome,
+  FaUser,
+  FaTools,
+  FaFolderOpen,
+  FaEnvelope,
+  FaBars,
+  FaTimes,
+  FaPalette,
+} from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import TargetCursor from "./ui/TargetCursor";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isThemeOpen, setIsThemeOpen] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const themeRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener("scroll", handleScroll);
+
+    // Apply theme to <html>
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+
     return () => window.removeEventListener("scroll", handleScroll);
+  }, [theme]);
+
+  // Close theme dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (themeRef.current && !themeRef.current.contains(event.target)) {
+        setIsThemeOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const navItems = [
     { to: "/", label: "Home", icon: <FaHome /> },
     { to: "/about", label: "About", icon: <FaUser /> },
-    { to: "/experience", label: "Experience", icon: <FaBriefcase /> },
     { to: "/skills", label: "Skills", icon: <FaTools /> },
     { to: "/projects", label: "Projects", icon: <FaFolderOpen /> },
     { to: "/contact", label: "Contact", icon: <FaEnvelope /> },
+  ];
+
+  const themes = [
+    { name: "light", color: "#f8fafc" },
+    { name: "dark", color: "#1e293b" },
+    { name: "purple", color: "#6d28d9" },
+    { name: "green", color: "#16a34a" },
+    { name: "orange", color: "#f97316" },
   ];
 
   return (
@@ -32,10 +68,7 @@ export default function Navbar() {
         : "py-4 bg-[var(--color-background)]"
         }`}
     >
-      <TargetCursor
-        spinDuration={2}
-        hideDefaultCursor={true}
-      />
+      <TargetCursor spinDuration={2} hideDefaultCursor={true} />
       <div className="container max-w-7xl mx-auto flex items-center justify-between px-5 lg:px-8">
         {/* Logo */}
         <div className="flex items-center gap-2 text-[var(--color-primary)] font-heading text-lg font-bold cursor-target">
@@ -61,6 +94,35 @@ export default function Navbar() {
               {item.label}
             </NavLink>
           ))}
+
+          {/* 🎨 Theme Selector */}
+          <div className="relative" ref={themeRef}>
+            <button
+              onClick={() => setIsThemeOpen((prev) => !prev)}
+              className="p-2 rounded-md hover:bg-gray-100 transition cursor-target"
+            >
+              <FaPalette className="text-xl text-gray-600 hover:text-[var(--color-primary)] transition" />
+            </button>
+
+
+            {isThemeOpen && (
+              <div className="absolute right-0 mt-2 flex gap-2 bg-white shadow-md rounded-lg p-2 z-50">
+                {themes.map((t) => (
+                  <button
+                    key={t.name}
+                    onClick={() => {
+                      setTheme(t.name);
+                      setIsThemeOpen(false);
+                    }}
+                    className="w-6 h-6 rounded-full border-2 border-gray-300 hover:scale-110 transition cursor-target"
+                    style={{ backgroundColor: t.color }}
+                    title={t.name}
+                  ></button>
+
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -99,6 +161,32 @@ export default function Navbar() {
                   {item.label}
                 </NavLink>
               ))}
+
+              {/* 🎨 Theme Picker on Mobile */}
+              <div className="flex items-center gap-2 mt-3 cursor-target" ref={themeRef}>
+                <button
+                  onClick={() => setIsThemeOpen((prev) => !prev)}
+                  className="flex items-center gap-1 px-2 py-1 rounded-md bg-gray-100 hover:bg-gray-200 transition"
+                >
+                  <FaPalette className="text-lg text-gray-600" /> Theme
+                </button>
+                {isThemeOpen && (
+                  <div className="flex gap-2 bg-white shadow-md rounded-lg p-2">
+                    {themes.map((t) => (
+                      <button
+                        key={t.name}
+                        onClick={() => {
+                          setTheme(t.name);
+                          setIsThemeOpen(false);
+                        }}
+                        className="w-6 h-6 rounded-full border-2 border-gray-300 hover:scale-110 transition"
+                        style={{ backgroundColor: t.color }}
+                        title={t.name}
+                      ></button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </motion.div>
         )}
