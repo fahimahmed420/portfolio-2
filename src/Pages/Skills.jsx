@@ -9,7 +9,8 @@ import { VscDatabase } from "react-icons/vsc";
 const SkillBadge = ({ icon, label }) => (
   <motion.span
     whileHover={{ scale: 1.05 }}
-    className="flex items-center gap-2 bg-white px-4 py-2 cursor-target rounded-md shadow-sm text-sm md:text-base text-gray-800 hover:text-black hover:shadow-md transition"
+    className="flex items-center gap-2 bg-primary px-4 py-2 cursor-target rounded-md shadow-sm text-sm md:text-base
+     opacity-90 hover:opacity-100 text-primary hover:shadow-md transition"
   >
     {icon} {label}
   </motion.span>
@@ -17,18 +18,18 @@ const SkillBadge = ({ icon, label }) => (
 
 const Skills = () => {
   return (
-    <div className="min-h-screen bg-white text-primary flex flex-col items-center px-5 pt-16 py-8">
+    <div className="min-h-screen bg-primary text-primary flex flex-col items-center px-5 pt-16 py-8">
       <h1 className="text-4xl md:text-5xl font-bold mb-12">Skills</h1>
 
       {/* Most Used Stack */}
-      <div className="bg-gray-100 rounded-2xl shadow p-6 md:p-8 mb-12 max-w-3xl  text-center">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-3">My Go-To Tech Stack</h2>
-        <p className="text-gray-700 text-sm md:text-base">
+      <div className="bg-light rounded-2xl shadow p-6 md:p-8 mb-12 max-w-3xl text-center">
+        <h2 className="text-2xl md:text-3xl font-semibold text-primary  mb-3">My Go-To Tech Stack</h2>
+        <p className="text-secondary text-sm md:text-base">
           I primarily build full-stack applications using{" "}
-          <span className="font-medium">React</span>,{" "}
-          <span className="font-medium">Node.js</span>,{" "}
-          <span className="font-medium">Express.js</span>, and{" "}
-          <span className="font-medium">MongoDB</span>.
+          <span className="font-medium text-primary">React</span>,{" "}
+          <span className="font-medium text-primary">Node.js</span>,{" "}
+          <span className="font-medium text-primary">Express.js</span>, and{" "}
+          <span className="font-medium text-primary">MongoDB</span>.
         </p>
       </div>
 
@@ -36,7 +37,7 @@ const Skills = () => {
       <div className="grid md:grid-cols-3 gap-6 md:gap-8 w-full max-w-7xl mx-auto lg:px-8">
         
         {/* Languages & Tools */}
-        <div className="bg-gray-100 rounded-xl p-4 md:p-6 shadow">
+        <div className="bg-light rounded-xl p-4 md:p-6 shadow">
           <h2 className="text-lg md:text-xl font-semibold mb-4">Languages & Tools</h2>
           <div className="flex flex-wrap gap-3">
             <SkillBadge icon={<FaPython />} label="Python" />
@@ -53,7 +54,7 @@ const Skills = () => {
         </div>
 
         {/* Frameworks & Libraries */}
-        <div className="bg-gray-100 rounded-xl p-4 md:p-6 shadow">
+        <div className="bg-light rounded-xl p-4 md:p-6 shadow">
           <h2 className="text-lg md:text-xl font-semibold mb-4">Frameworks & Libraries</h2>
           <div className="flex flex-wrap gap-3">
             <SkillBadge icon={<FaReact />} label="React" />
@@ -69,7 +70,7 @@ const Skills = () => {
         </div>
 
         {/* Core CS Concepts */}
-        <div className="bg-gray-100 rounded-xl p-4 md:p-6 shadow">
+        <div className="bg-light rounded-xl p-4 md:p-6 shadow">
           <h2 className="text-lg md:text-xl font-semibold mb-4">Core CS Concepts</h2>
           <div className="flex flex-wrap gap-3">
             <SkillBadge icon={null} label="DSA" />
@@ -82,17 +83,17 @@ const Skills = () => {
       </div>
 
       {/* Currently Learning */}
-      <div className="bg-gray-100 rounded-2xl shadow p-6 md:p-8 mt-12 max-w-3xl text-center">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-3">Currently Learning</h2>
-        <p className="text-gray-700 text-sm md:text-base">
-          Exploring <span className="font-medium">Next.js</span>,{" "}
-          <span className="font-medium">GraphQL</span>, and{" "}
-          <span className="font-medium">Docker Compose</span> to expand my full-stack capabilities.
+      <div className="bg-light rounded-2xl shadow p-6 md:p-8 mt-12 max-w-3xl text-center">
+        <h2 className="text-2xl md:text-3xl text-primary font-semibold mb-3">Currently Learning</h2>
+        <p className="text-secondary text-sm md:text-base">
+          Exploring <span className="font-medium text-primary">Next.js</span>,{" "}
+          <span className="font-medium text-primary">GraphQL</span>, and{" "}
+          <span className="font-medium text-primary">Docker Compose</span> to expand my full-stack capabilities.
         </p>
       </div>
 
       {/* Closing statement */}
-      <p className="mt-16 text-center text-gray-600 max-w-2xl italic text-sm md:text-base">
+      <p className="mt-16 text-center text-secondary max-w-2xl italic text-sm md:text-base">
         Constantly evolving, one skill at a time.
       </p>
 
