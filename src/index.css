@@ -17,6 +17,8 @@
   --primary-text: #0d172a;
   --secondary-text: #575f6b;
   --bg-light: #f3f4f6;
+   --counter-active-bg: #000000;   /* black */
+  --counter-inactive-bg: #9ca3af; /* gray-400 */
 }
 
 /* ================= DARK THEME ================= */
@@ -25,6 +27,8 @@
   --primary-text: #d7d9dd;
   --secondary-text: #b1b4b8;
   --bg-light: #121416;
+   --counter-active-bg: #ffffff;   /* white */
+  --counter-inactive-bg: #4b5563; /* gray-600 */
 }
 
 /* ================= PURPLE THEME ================= */
@@ -57,6 +61,8 @@
 
 .bg-primary {background-color: var(--bg-primary);}
 .bg-light { background-color: var(--bg-light); }
+.bg-counter-active {background-color: var(--counter-active-bg);}
+.bg-counter-inactive {background-color: var(--counter-inactive-bg);}
 
 
 

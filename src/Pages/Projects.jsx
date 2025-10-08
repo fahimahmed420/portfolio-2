@@ -42,7 +42,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="h-screen w-full overflow-y-scroll scrollbar-hide snap-y snap-mandatory bg-white relative">
+    <div className="h-screen w-full overflow-y-scroll scrollbar-hide snap-y snap-mandatory bg-primary relative">
       {/* Left Counter (only visible on xl+) */}
       <div className="hidden 2xl:flex fixed left-8 top-1/2 -translate-y-1/2 flex-col space-y-4 z-10 items-center">
         {projects.map((_, i) => (
@@ -50,7 +50,7 @@ const Projects = () => {
             key={i}
             onClick={() => scrollToProject(i)}
             className={`h-[4px] w-8 transition-all cursor-target ${
-              activeIndex === i ? "bg-black w-12" : "bg-gray-400"
+              activeIndex === i ? "bg-counter-active w-12" : "bg-counter-inactive"
             }`}
           ></button>
         ))}
@@ -58,7 +58,7 @@ const Projects = () => {
         {/* Scroll hint arrows */}
         {activeIndex === 0 && (
           <div className="absolute -bottom-60 flex items-center">
-            <span className="text-sm text-gray-500 rotate-90 inline-flex items-center">
+            <span className="text-sm text-[var(--counter-inactive-bg)] rotate-90 inline-flex items-center">
               Scroll Down ───────────────▷
             </span>
           </div>
@@ -66,7 +66,7 @@ const Projects = () => {
 
         {activeIndex === projects.length - 1 && (
           <div className="absolute -top-60 flex items-center">
-            <span className="text-sm text-gray-500 -rotate-90 inline-flex items-center">
+            <span className="text-sm text-[var(--counter-inactive-bg)] -rotate-90 inline-flex items-center">
               Scroll Up ───────────────▷
             </span>
           </div>
@@ -121,7 +121,7 @@ const Projects = () => {
                     href={project.sourceCode}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3 py-1 cursor-target rounded-md border border-gray-300 text-secondary hover:bg-black hover:text-white transition"
+                    className="px-3 py-1 cursor-target rounded-md border border-[var(--counter-inactive-bg)] text-secondary hover:bg-black transition"
                   >
                     Git
                   </a>
@@ -129,7 +129,7 @@ const Projects = () => {
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3 py-1 rounded-md cursor-target border border-gray-300 text-secondary hover:bg-black hover:text-white transition"
+                    className="px-3 py-1 rounded-md cursor-target border border-[var(--counter-inactive-bg)] text-secondary hover:bg-black hover:text-white transition"
                   >
                     Live
                   </a>
@@ -143,7 +143,7 @@ const Projects = () => {
                 {project.tech.map((t, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 text-sm bg-gray-200 rounded-md text-primary cursor-target"
+                    className="px-3 py-1 text-sm bg-light rounded-md text-primary cursor-target"
                   >
                     {t}
                   </span>
