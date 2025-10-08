@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { FaBriefcase, FaCode, FaLaptopCode, FaBook, FaGraduationCap } from 'react-icons/fa';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
-// The main App component that renders the entire timeline.
 export default function Timeline() {
-  // Sample data for the timeline. You can add or remove items here.
  const timelineData = [
   {
     id: 1,
@@ -63,7 +61,7 @@ export default function Timeline() {
 ];
 
   return (
-    <div className="bg-gray-100 rounded-lg p-6">
+    <div className="bg-light rounded-lg p-6">
       <div className="max-w-4xl mx-auto px-4">
         {/* Header section of the timeline */}
         <div className="flex items-center gap-4 mb-10">
@@ -79,7 +77,7 @@ export default function Timeline() {
         {/* The main timeline container with the vertical line */}
         <div className="relative">
           {/* Vertical line. The absolute positioning and height create the timeline line. */}
-          <div className="absolute left-[13px] top-0 bottom-0 w-1 bg-neutral-200 rounded-full"></div>
+          <div className="absolute left-[13px] top-0 bottom-0 w-1 bg-[var(--bg-primary)] rounded-full"></div>
 
           {/* Map through the timeline data to render each item */}
           {timelineData.map((item) => (
@@ -103,12 +101,14 @@ const TimelineItem = ({ item }) => {
   return (
     <div className="relative p-6">
       {/* Container for the icon on the timeline */}
-      <div className="absolute top-0 -left-1 z-10 p-2 bg-white text-primary rounded-full border-4 border-neutral-100 shadow-md">
+      <div className="absolute top-0 -left-1 z-10 p-2 bg-primary text-primary 
+      rounded-full border-4 border-[var(--text-primary)] shadow-md">
         {item.icon}
       </div>
 
       {/* The timeline card content. The hover effect is added here. */}
-      <div className="ml-10 p-6 bg-white rounded-xl transition transform hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+      <div className="ml-10 p-6 bg-primary rounded-xl transition transform
+       hover:-translate-y-1 hover:shadow-xl cursor-pointer">
         <div className="flex justify-between cursor-target items-start" onClick={toggleOpen}>
           <div>
             <h3 className="text-lg font-semibold text-primary">{item.title}</h3>
@@ -124,9 +124,9 @@ const TimelineItem = ({ item }) => {
 
         {/* Additional information tags like category and location */}
         <div className="mt-4 flex gap-2 text-sm md:text-base">
-          <span className="bg-gray-100 text-primary px-2 py-1 rounded-md shadow">{item.category}</span>
+          <span className="bg-light text-primary px-2 py-1 rounded-md shadow">{item.category}</span>
           {item.location && (
-            <span className="bg-gray-100 text-primary px-2 py-1 rounded-md shadow">{item.location}</span>
+            <span className="bg-light text-primary px-2 py-1 rounded-md shadow">{item.location}</span>
           )}
         </div>
 

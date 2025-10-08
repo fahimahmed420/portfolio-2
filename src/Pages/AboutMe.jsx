@@ -27,7 +27,7 @@ const AboutMe = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex justify-center relative">
+    <div className="min-h-screen bg-primary flex justify-center relative">
       {/* Right Fixed Links */}
       <div className="hidden xl:flex fixed right-8 top-1/2 -translate-y-1/2 flex-col space-y-16 z-10">
         <motion.a
@@ -52,7 +52,7 @@ const AboutMe = () => {
 
       <div className="max-w-7xl px-4 md:px-6 lg:px-8 py-8 flex flex-col lg:flex-row gap-6 lg:gap-8 w-full">
         {/* Left Sidebar */}
-        <aside className="w-full lg:w-80 bg-gray-100 p-6 lg:sticky lg:top-16 lg:h-[calc(100vh-64px)] flex flex-col gap-6 rounded-lg">
+        <aside className="w-full lg:w-80 bg-light p-6 lg:sticky lg:top-16 lg:h-[calc(100vh-64px)] flex flex-col gap-6 rounded-lg">
           <div className="flex flex-col items-center space-y-3">
             <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden shadow-lg mb-4">
               <Image
@@ -90,7 +90,7 @@ const AboutMe = () => {
               {profile.coreValues.map((val, i) => (
                 <li
                   key={i}
-                  className="bg-white text-primary px-2 py-1 rounded-md shadow-sm text-xs sm:text-sm md:text-base"
+                  className="bg-primary text-primary px-2 py-1 rounded-md shadow-sm text-xs sm:text-sm md:text-base"
                 >
                   {val}
                 </li>
@@ -101,7 +101,7 @@ const AboutMe = () => {
 
         {/* Main Content */}
         <div className="flex-1 space-y-6">
-          <main className="p-6 sm:p-8 space-y-8 bg-gray-100 shadow rounded-lg">
+          <main className="p-6 sm:p-8 space-y-8 bg-light shadow rounded-lg">
             <section>
               <h2 className="text-xl sm:text-2xl font-semibold text-primary mb-2">
                 My Story
