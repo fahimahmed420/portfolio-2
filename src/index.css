@@ -10,48 +10,56 @@
 }
 
 
-:root {
+/* ================= LIGHT THEME ================= */
+:root,
+[data-theme="light"] {
+  --bg-primary: #ffffff; /* main background */
   --primary-text: #0d172a;
-  /* Dark navy text */
   --secondary-text: #575f6b;
-  /* Muted gray text */
-  --highlight: #f97316;
-  /* Orange highlight */
-  --highlight-light: #fb923c;
-  /* Lighter orange */
   --bg-light: #f3f4f6;
-  /* Very light background */
-  --bg-white: #ffffff;
-  /* Pure white */
 }
 
-.text-primary {
-  color: var(--primary-text);
+/* ================= DARK THEME ================= */
+[data-theme="dark"] {
+  --bg-primary: #1e2125; /* main background */
+  --primary-text: #d7d9dd;
+  --secondary-text: #b1b4b8;
+  --bg-light: #121416;
 }
 
-.text-secondary {
-  color: var(--secondary-text);
+/* ================= PURPLE THEME ================= */
+[data-theme="purple"] {
+  --bg-primary: #7c3aed; /* main background */
+  --primary-text: #e0d7f5;
+  --secondary-text: #c4b5fd;
+  --bg-light: #5b21b6;
 }
 
-.text-highlight {
-  color: var(--highlight);
+/* ================= GREEN THEME ================= */
+[data-theme="green"] {
+  --bg-primary: #047857; /* main background */
+  --primary-text: #f0fdf4;
+  --secondary-text: #bbf7d0;
+  --bg-light: #065f46;
 }
 
-.bg-light {
-  background-color: var(--bg-light);
+/* ================= ORANGE THEME ================= */
+[data-theme="orange"] {
+  --bg-primary: #f97316; /* main background */
+  --primary-text: #ffffff;
+  --secondary-text: #fcd34d;
+  --bg-light: #c2410c;
 }
 
-.bg-white {
-  background-color: var(--bg-white);
-}
+/* ========== UTILITY CLASSES (same as before) ========== */
+.text-primary { color: var(--primary-text); }
+.text-secondary { color: var(--secondary-text); }
 
-.bg-highlight {
-  background-color: var(--highlight);
-}
+.bg-primary {background-color: var(--bg-primary);}
+.bg-light { background-color: var(--bg-light); }
 
-.bg-highlight-light {
-  background-color: var(--highlight-light);
-}
+
+
 
 /* profile social icons animation */
 @keyframes spin-slow {
@@ -136,55 +144,3 @@
 .glass-cursor.hover .glass-cursor__dot { transform:scale(1.25); }
 .glass-cursor.active { transform: translate3d(-50%, -50%, 0) scale(0.9); }
 @media (hover:none) and (pointer:coarse){ .glass-cursor{display:none!important;} .custom-cursor-enabled *{cursor:auto!important;} }
-
-/* From Uiverse.io by Praashoo7 */ 
-/* The switch - the box around the slider */
-.switch {
-  font-size: 12px;
-  position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
-  transition: .4s;
-  border-radius: 5px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 1.4em;
-  width: 0.1em;
-  border-radius: 0px;
-  left: 0.3em;
-  bottom: 0.3em;
-  background-color: white;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #171717;
-  box-shadow: inset 2px 5px 10px rgb(0, 0, 0);
-}
-
-input:checked + .slider:before {
-  transform: translateX(2.8em) rotate(360deg);
-}

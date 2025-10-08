@@ -143,10 +143,10 @@ const Home = () => {
   const ExternalIcon = iconMap["ExternalLink"];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-primary">
       <main className="pt-16 max-w-7xl mx-auto px-5 lg:px-8 py-8">
         {/* HERO SECTION */}
-        <section className="bg-white rounded-xl shadow-elevation-2 overflow-hidden mb-12 p-8 lg:p-12">
+        <section className="rounded-xl shadow-elevation-2 overflow-hidden mb-12 p-8 lg:p-12">
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Left side */}
             <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
@@ -291,7 +291,7 @@ const Home = () => {
                       className="flex items-start space-x-4 p-4 bg-light rounded-lg"
                     >
                       <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
-                        <IconComp size={20} className="text-accent" />
+                        <IconComp size={20} className="text-primary" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-primary text-sm">
@@ -312,8 +312,8 @@ const Home = () => {
 
 
         {/* QUICK STATS */}
-        <section className="bg-light rounded-xl shadow-elevation-1 p-6 mb-12">
-          <h2 className="text-xl font-semibold text-primary mb-6">
+        <section className="bg-light rounded-xl p-6 mb-12 text-primary">
+          <h2 className="text-xl font-semibold mb-6">
             Quick Stats
           </h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -340,14 +340,14 @@ const Home = () => {
         </section>
 
         {/* NOTEBOOK TABS */}
-        <section className="bg-light rounded-xl shadow-elevation-1 p-6 mb-12">
+        <section className="bg-light rounded-xl p-6 mb-12">
           <TabPreviewSection />
         </section>
 
         {/* RECENT WORK */}
-        <section className="bg-light rounded-xl shadow-elevation-1 p-6 mb-12">
+        <section className="bg-light rounded-xl p-6 mb-12 text-primary">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-semibold text-primary">
+            <h2 className="text-xl font-semibold ">
               Recent Work
             </h2>
             <Button
@@ -380,12 +380,12 @@ const Home = () => {
                 </div>
                 <div className="p-4 space-y-3">
                   <div className="flex items-start justify-between">
-                    <h3 className="font-semibold text-primary text-sm">
+                    <h3 className="font-semibold text-sm">
                       {p.title}
                     </h3>
                     <ExternalIcon size={14} />
                   </div>
-                  <p className="text-xs">{p.description}</p>
+                  <p className="text-xs text-secondary">{p.description}</p>
                 </div>
               </a>
             ))}
@@ -393,8 +393,8 @@ const Home = () => {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="bg-light rounded-xl p-6 mb-12">
-          <h2 className="text-xl font-semibold text-primary mb-6">
+        <section className="bg-light rounded-xl p-6 mb-12 text-primary">
+          <h2 className="text-xl font-semibold mb-6">
             What People Say
           </h2>
           {testimonials.map((t, i) => (
@@ -402,7 +402,7 @@ const Home = () => {
               key={i}
               className="rounded-lg p-6 space-y-4 mb-4"
             >
-              <p className="text-primary">"{t.content}"</p>
+              <p className="text-secondary">"{t.content}"</p>
               <div className="flex items-center space-x-4">
                 <Image src={t.avatar} alt={t.name} className="w-12 h-12 rounded-full" />
                 <div>

@@ -21,7 +21,7 @@ const tabs = [
     icon: "user",
     link: "about",
     content: (
-      <div className="text-gray-700 w-full">
+      <div className="text-secondary w-full">
         <h3 className="text-lg font-semibold mb-2">About Me</h3>
         <p className="mb-4">
           Full-Stack Developer passionate about crafting web applications with modern technologies.
@@ -48,7 +48,7 @@ const tabs = [
     icon: "briefcase",
     link: "experience",
     content: (
-      <div className="text-gray-700 w-full">
+      <div className="text-secondary w-full">
         <h3 className="text-lg font-semibold mb-2">Experience</h3>
         <p className="mb-4">
           Hands-on projects and collaborations that shaped my expertise.
@@ -75,7 +75,7 @@ const tabs = [
     icon: "award",
     link: "skills",
     content: (
-      <div className="text-gray-700 w-full">
+      <div className="text-secondary w-full">
         <h3 className="text-lg font-semibold mb-2">Skills</h3>
         <p className="mb-4">
           Discover my technical competencies, tools I master, and areas of specialization.
@@ -110,7 +110,7 @@ const tabs = [
     icon: "folder",
     link: "projects",
     content: (
-      <div className="text-gray-700 w-full">
+      <div className="text-secondary w-full">
         <h3 className="text-lg font-semibold mb-2">Projects</h3>
         <p className="mb-4">
           A selection of projects showcasing my skills and problem-solving approach.
@@ -146,7 +146,7 @@ const tabs = [
     icon: "envelope",
     link: "contact",
     content: (
-      <div className="text-gray-700 w-full">
+      <div className="text-secondary w-full">
         <h3 className="text-lg font-semibold mb-2">Contact</h3>
 
         <div className="space-y-2">
@@ -167,7 +167,7 @@ const tabs = [
           </p>
         </div>
 
-        <p className="text-sm text-gray-600 mt-4">
+        <p className="text-sm opacity-80 mt-4">
           Let's connect and build something amazing together!
         </p>
       </div>
@@ -180,10 +180,6 @@ export default function TabPreviewSection() {
 
   return (
     <div className="max-w-4xl mx-auto px-4">
-       <TargetCursor
-        spinDuration={2}
-        hideDefaultCursor={true}
-      />
       {/* Tabs */}
       <div className="flex flex-wrap justify-center gap-6 sm:gap-10 border-b border-gray-300 pb-3 mb-6">
         {tabs.map((tab, idx) => {
@@ -194,7 +190,7 @@ export default function TabPreviewSection() {
               href={tab.link}
               onMouseEnter={() => setHoverIndex(idx)}
               onMouseLeave={() => setHoverIndex(null)}
-              className="flex items-center cursor-target space-x-2 text-gray-600 hover:text-black cursor-pointer transition-colors duration-200 text-sm sm:text-base"
+              className="flex items-center cursor-target space-x-2 text-primary opacity-70 hover:opacity-100 cursor-pointer transition-colors duration-200 text-sm sm:text-base"
             >
               <Icon className="text-lg sm:text-xl" />
               <span className="font-medium">{tab.label}</span>
@@ -227,7 +223,7 @@ export default function TabPreviewSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="text-gray-500 text-center p-4 text-sm sm:text-base"
+              className="text-primary text-center p-4 text-sm sm:text-base"
             >
               Hover over a tab to see a preview
             </motion.p>

@@ -163,10 +163,10 @@ export default function Navbar() {
               ))}
 
               {/* 🎨 Theme Picker on Mobile */}
-              <div className="flex items-center gap-2 mt-3 cursor-target" ref={themeRef}>
+              <div className="flex items-center gap-2 mt-3" ref={themeRef}>
                 <button
                   onClick={() => setIsThemeOpen((prev) => !prev)}
-                  className="flex items-center gap-1 px-2 py-1 rounded-md bg-gray-100 hover:bg-gray-200 transition"
+                  className="flex items-center gap-1 px-2 py-1 rounded-md bg-gray-100 cursor-target hover:bg-gray-200 transition"
                 >
                   <FaPalette className="text-lg text-gray-600" /> Theme
                 </button>
@@ -179,7 +179,7 @@ export default function Navbar() {
                           setTheme(t.name);
                           setIsThemeOpen(false);
                         }}
-                        className="w-6 h-6 rounded-full border-2 border-gray-300 hover:scale-110 transition"
+                        className="w-6 h-6 cursor-target rounded-full border-2 border-gray-300 hover:scale-110 transition"
                         style={{ backgroundColor: t.color }}
                         title={t.name}
                       ></button>
