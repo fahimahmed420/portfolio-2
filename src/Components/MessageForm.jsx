@@ -54,9 +54,9 @@ const MessageForm = () => {
 
 
     return (
-        <div className="bg-gray-100 shadow-sm rounded-lg py-5 px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center text-gray-900 mb-6">
-                <LuSend className="h-6 w-6 text-gray-600 mr-2" />
+        <div className="bg-light shadow-sm rounded-lg py-5 px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center text-primary mb-6">
+                <LuSend className="h-6 w-6 mr-2" />
                 <h3 className="text-xl font-semibold">Send a Mail</h3>
             </div>
 
@@ -66,7 +66,7 @@ const MessageForm = () => {
                     <div>
                         <label
                             htmlFor="from_name"
-                            className="block text-sm font-medium text-gray-700"
+                            className="block text-sm font-medium text-secondary"
                         >
                             Full Name <span className="text-red-500">*</span>
                         </label>
@@ -75,7 +75,7 @@ const MessageForm = () => {
                             name="from_name"
                             id="from_name"
                             placeholder="Enter your full name"
-                            className="mt-1 cursor-target shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-white rounded-md bg-white p-2"
+                            className="mt-1 cursor-target shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-white rounded-md bg-primary p-2"
                             required
                         />
                     </div>
@@ -83,7 +83,7 @@ const MessageForm = () => {
                     <div>
                         <label
                             htmlFor="from_email"
-                            className="block text-sm font-medium text-gray-700"
+                            className="block text-sm font-medium text-secondary"
                         >
                             Email Address <span className="text-red-500">*</span>
                         </label>
@@ -92,7 +92,7 @@ const MessageForm = () => {
                             name="from_email"
                             id="from_email"
                             placeholder="your.email@example.com"
-                            className="mt-1 cursor-target shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-white rounded-md bg-white p-2"
+                            className="mt-1 cursor-target shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-white rounded-md bg-primary p-2"
                             required
                         />
                     </div>
@@ -102,7 +102,7 @@ const MessageForm = () => {
                 <div>
                     <label
                         htmlFor="subject"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-secondary"
                     >
                         Subject <span className="text-red-500">*</span>
                     </label>
@@ -111,7 +111,7 @@ const MessageForm = () => {
                         name="subject"
                         id="subject"
                         placeholder="What's this about?"
-                        className="mt-1 cursor-target shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-white rounded-md bg-white p-2"
+                        className="mt-1 cursor-target shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-white rounded-md bg-primary p-2"
                         required
                     />
                 </div>
@@ -121,14 +121,14 @@ const MessageForm = () => {
                     <div>
                         <label
                             htmlFor="project_type"
-                            className="block text-sm font-medium text-gray-700"
+                            className="block text-sm font-medium text-secondary"
                         >
                             Project Type
                         </label>
                         <select
                             id="project_type"
                             name="project_type"
-                            className="mt-1 cursor-target block w-full pl-3 pr-10 py-2 text-base border-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md bg-white"
+                            className="mt-1 cursor-target block w-full pl-3 pr-10 py-2 text-base border-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md bg-primary"
                         >
                             <option>Select project type</option>
                             <option>Web Development</option>
@@ -142,14 +142,14 @@ const MessageForm = () => {
                     <div>
                         <label
                             htmlFor="budget_range"
-                            className="block text-sm font-medium text-gray-700"
+                            className="block text-sm font-medium text-secondary"
                         >
                             Budget Range
                         </label>
                         <select
                             id="budget_range"
                             name="budget_range"
-                            className="mt-1 cursor-target block w-full pl-3 pr-10 py-2 text-base border-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md bg-white"
+                            className="mt-1 cursor-target block w-full pl-3 pr-10 py-2 text-base border-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md bg-primary"
                         >
                             <option>Select budget range</option>
                             <option>Under $100</option>
@@ -164,14 +164,14 @@ const MessageForm = () => {
                     <div>
                         <label
                             htmlFor="timeline"
-                            className="block text-sm font-medium text-gray-700"
+                            className="block text-sm font-medium text-secondary"
                         >
                             Timeline
                         </label>
                         <select
                             id="timeline"
                             name="timeline"
-                            className="mt-1 cursor-target block w-full pl-3 pr-10 py-2 text-base border-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md bg-white"
+                            className="mt-1 cursor-target block w-full pl-3 pr-10 py-2 text-base border-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md bg-primary"
                         >
                             <option>Select timeline</option>
                             <option>ASAP</option>
@@ -188,7 +188,7 @@ const MessageForm = () => {
                 <div>
                     <label
                         htmlFor="message"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-secondary"
                     >
                         Message <span className="text-red-500">*</span>
                     </label>
@@ -197,7 +197,7 @@ const MessageForm = () => {
                         name="message"
                         rows="4"
                         placeholder="Tell me about your project, goals, and how I can help..."
-                        className="mt-1 cursor-target shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-white rounded-md bg-white p-2"
+                        className="mt-1 cursor-target shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-white rounded-md bg-primary p-2"
                         required
                     ></textarea>
                 </div>
@@ -207,7 +207,7 @@ const MessageForm = () => {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="inline-flex cursor-target items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-[#2d485f] hover:bg-[#233849] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        className="inline-flex cursor-target items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-primary bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
                         {loading ? "Sending..." : "Send Message"}
                         <svg
