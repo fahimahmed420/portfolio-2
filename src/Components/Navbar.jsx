@@ -63,15 +63,20 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 transition-all duration-300 border-b border-gray-200 ${isScrolled
-        ? "py-2 shadow-md bg-white/30 backdrop-blur-md"
-        : "py-4 bg-[var(--color-background)]"
+      className={`sticky top-0 z-50 transition-all duration-300 border-b ${isScrolled
+        ? theme === "dark"
+          ? "py-2 shadow-md bg-slate-900/60 backdrop-blur-md border-gray-700"
+          : "py-2 shadow-md bg-white/30 backdrop-blur-md border-gray-200"
+        : theme === "dark"
+          ? "py-4 bg-light border-gray-800"
+          : "py-4 bg-[var(--color-background)] border-gray-200"
         }`}
     >
+
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
       <div className="container max-w-7xl mx-auto flex items-center justify-between px-5 lg:px-8">
         {/* Logo */}
-        <div className="flex items-center gap-2 text-[var(--color-primary)] font-heading text-lg font-bold cursor-target">
+        <div className="flex items-center gap-2 text-primary font-heading text-lg font-bold cursor-target">
           <FaBookOpen className="text-2xl" />
           Fahim Ahmed
         </div>
@@ -84,11 +89,15 @@ export default function Navbar() {
               to={item.to}
               end
               className={({ isActive }) =>
-                `flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-all cursor-target ${isActive
-                  ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]"
-                  : "text-gray-500 hover:text-[var(--color-primary)] hover:bg-gray-100"
+                `flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-all cursor-target
+              ${isActive
+                  ? "bg-primary text-primary"
+                  : theme === "dark"
+                    ? "text-gray-300 hover:text-[var(--color-primary)]"
+                    : "text-gray-600 hover:text-[var(--color-primary)]"
                 }`
               }
+
             >
               {item.icon}
               {item.label}
