@@ -151,7 +151,7 @@ export default function Navbar() {
                   end
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-all
+                    `flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-all cursor-target
                      ${isActive
                         ? "bg-[var(--bg-light)] text-[var(--primary-text)]"
                         : "text-[var(--secondary-text)] hover:text-[var(--primary-text)] hover:bg-[var(--bg-light)]"
@@ -167,9 +167,9 @@ export default function Navbar() {
               <div className="flex items-center gap-2 mt-3" ref={themeRef}>
                 <button
                   onClick={() => setIsThemeOpen((prev) => !prev)}
-                  className="flex items-center gap-1 px-2 py-1 rounded-md bg-[var(--bg-light)] cursor-target hover:opacity-90 transition"
+                  className="flex items-center gap-1 px-2 py-1 rounded-md bg-[var(--bg-light)] text-primary cursor-target hover:opacity-90 transition"
                 >
-                  <FaPalette className="text-lg text-[var(--secondary-text)]" /> Theme
+                  <FaPalette className="text-lg" /> Theme
                 </button>
                 {isThemeOpen && (
                   <div className="flex gap-2 bg-[var(--bg-primary)] shadow-md rounded-lg p-2">

@@ -144,61 +144,62 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-primary">
-      <main className="pt-16 max-w-7xl mx-auto px-5 lg:px-8 py-8">
+      <main className=" max-w-7xl mx-auto px-5 lg:px-8 py-8">
         {/* HERO SECTION */}
-        <section className="rounded-xl shadow-elevation-2 overflow-hidden mb-12 p-8 lg:p-12">
+        <section className="rounded-xl overflow-hidden mb-12 p-8 py-12">
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Left side */}
             <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
               <div className="relative">
                 {/* profile name marquee in circle */}
-                <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden shadow-elevation-2 ring-4 ring-background flex flex-col justify-center items-center bg-gray-200 relative">
+                <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden ring-4 
+                ring-[var(--primary-text)] flex flex-col justify-center items-center bg-light relative">
                   {/* Line 1 */}
                   <div className="w-full whitespace-nowrap flex animate-marquee-slow">
-                    <p className="text-gray-400 font-bold px-2">
+                    <p className="text-secondary font-bold px-2">
                       Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
                     </p>
-                    <p className="text-gray-400 font-bold px-2">
+                    <p className="text-secondary font-bold px-2">
                       Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
                     </p>
                   </div>
 
                   {/* Line 2 */}
                   <div className="w-full whitespace-nowrap flex animate-marquee-reverse">
-                    <p className="text-gray-300 font-bold px-2">
+                    <p className="text-secondary opacity-50 font-bold px-2">
                       Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
                     </p>
-                    <p className="text-gray-300 font-bold px-2">
+                    <p className="text-secondary opacity-50 font-bold px-2">
                       Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
                     </p>
                   </div>
 
                   {/* Line 3 */}
                   <div className="w-full whitespace-nowrap flex animate-marquee">
-                    <p className="text-gray-400 font-bold px-2">
+                    <p className="text-secondary font-bold px-2">
                       Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
                     </p>
-                    <p className="text-gray-400 font-bold px-2">
+                    <p className="text-secondary font-bold px-2">
                       Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
                     </p>
                   </div>
 
                   {/* Line 4 */}
                   <div className="w-full whitespace-nowrap flex animate-marquee-reverse-slow">
-                    <p className="text-gray-300 font-bold px-2">
+                    <p className="text-secondary opacity-50 font-bold px-2">
                       Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
                     </p>
-                    <p className="text-gray-300 font-bold px-2">
+                    <p className="text-secondary opacity-50 font-bold px-2">
                       Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
                     </p>
                   </div>
 
                   {/* Line 5 */}
                   <div className="w-full whitespace-nowrap flex animate-marquee-fast">
-                    <p className="text-gray-400 font-bold px-2">
+                    <p className="text-secondary font-bold px-2">
                       Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
                     </p>
-                    <p className="text-gray-400 font-bold px-2">
+                    <p className="text-secondary font-bold px-2">
                       Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
                     </p>
                   </div>
@@ -226,7 +227,8 @@ const Home = () => {
                           transform: `translate(${x}px, ${y}px)`,
                         }}
                       >
-                        <div className="p-2 bg-white cursor-target rounded-full shadow-md hover:bg-accent/10 transition animate-counter-spin">
+                        <div className="p-2 bg-[var(--primary-text)] text-[var(--bg-light)] cursor-target rounded-full
+                         shadow-md hover:bg-accent/10 transition animate-counter-spin">
                           <IconComp size={18} className="text-accent" />
                         </div>
                       </a>
