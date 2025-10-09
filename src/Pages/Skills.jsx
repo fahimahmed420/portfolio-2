@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { FaPython, FaJava, FaReact, FaNodeJs, FaGitAlt, FaDocker, FaGithub, FaLinkedin } from "react-icons/fa";
 import { 
   SiTypescript, SiJavascript, SiPostman, SiFirebase, SiExpress, 
@@ -17,6 +18,11 @@ const SkillBadge = ({ icon, label }) => (
 );
 
 const Skills = () => {
+
+  useEffect(() => {
+    document.title = "Skills | Fahim Ahmed";
+  }, []);
+
   return (
     <div className="min-h-screen bg-primary text-primary flex flex-col items-center px-5 pt-16 py-8">
       <h1 className="text-4xl md:text-5xl font-bold mb-12">Skills</h1>

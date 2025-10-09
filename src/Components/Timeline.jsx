@@ -65,7 +65,7 @@ export default function Timeline() {
       <div className="max-w-4xl mx-auto px-4">
         {/* Header section of the timeline */}
         <div className="flex items-center gap-4 mb-10">
-          <div className="text-3xl text-neutral-500">
+          <div className="text-3xl text-primary">
             <FaBriefcase />
           </div>
           <div>
