@@ -63,20 +63,16 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 transition-all duration-300 border-b ${isScrolled
-        ? theme === "dark"
-          ? "py-2 shadow-md bg-slate-900/60 backdrop-blur-md border-gray-700"
-          : "py-2 shadow-md bg-white/30 backdrop-blur-md border-gray-200"
-        : theme === "dark"
-          ? "py-4 bg-light border-gray-800"
-          : "py-4 bg-[var(--color-background)] border-gray-200"
+      className={`sticky top-0 z-50 transition-all duration-300 shadow 
+        ${isScrolled
+          ? "py-2 shadow-md bg-[var(--bg-light)]/80 backdrop-blur-md"
+          : "py-4 bg-[var(--bg-light)]"
         }`}
     >
-
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
       <div className="container max-w-7xl mx-auto flex items-center justify-between px-5 lg:px-8">
         {/* Logo */}
-        <div className="flex items-center gap-2 text-primary font-heading text-lg font-bold cursor-target">
+        <div className="flex items-center gap-2 text-[var(--primary-text)] font-heading text-lg font-bold cursor-target">
           <FaBookOpen className="text-2xl" />
           Fahim Ahmed
         </div>
@@ -90,14 +86,11 @@ export default function Navbar() {
               end
               className={({ isActive }) =>
                 `flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-all cursor-target
-              ${isActive
-                  ? "bg-primary text-primary"
-                  : theme === "dark"
-                    ? "text-gray-300 hover:text-[var(--color-primary)]"
-                    : "text-gray-600 hover:text-[var(--color-primary)]"
-                }`
+                 ${isActive
+                    ? "bg-[var(--bg-primary)] text-[var(--primary-text)]"
+                    : "text-[var(--secondary-text)] hover:text-[var(--primary-text)] hover:bg-[var(--bg-primary)]"
+                 }`
               }
-
             >
               {item.icon}
               {item.label}
@@ -108,14 +101,13 @@ export default function Navbar() {
           <div className="relative" ref={themeRef}>
             <button
               onClick={() => setIsThemeOpen((prev) => !prev)}
-              className="p-2 rounded-md hover:bg-gray-100 transition cursor-target"
+              className="p-2 rounded-md hover:bg-[var(--bg-light)] transition cursor-target"
             >
-              <FaPalette className="text-xl text-gray-600 hover:text-[var(--color-primary)] transition" />
+              <FaPalette className="text-xl text-[var(--secondary-text)] hover:text-[var(--primary-text)] transition" />
             </button>
 
-
             {isThemeOpen && (
-              <div className="absolute right-0 mt-2 flex gap-2 bg-white shadow-md rounded-lg p-2 z-50">
+              <div className="absolute right-0 mt-2 flex gap-2 bg-[var(--bg-primary)] shadow-md rounded-lg p-2 z-50">
                 {themes.map((t) => (
                   <button
                     key={t.name}
@@ -127,7 +119,6 @@ export default function Navbar() {
                     style={{ backgroundColor: t.color }}
                     title={t.name}
                   ></button>
-
                 ))}
               </div>
             )}
@@ -137,7 +128,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-2xl text-gray-700 hover:text-[var(--color-primary)] transition cursor-target"
+          className="lg:hidden text-2xl text-[var(--secondary-text)] hover:text-[var(--primary-text)] transition cursor-target"
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
@@ -150,7 +141,7 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden overflow-hidden bg-white shadow-md "
+            className="lg:hidden overflow-hidden bg-[var(--bg-primary)] shadow-md"
           >
             <div className="flex flex-col px-5 py-3 gap-2">
               {navItems.map((item) => (
@@ -160,10 +151,11 @@ export default function Navbar() {
                   end
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-all ${isActive
-                      ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]"
-                      : "text-gray-500 hover:text-[var(--color-primary)] hover:bg-gray-100"
-                    }`
+                    `flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-all
+                     ${isActive
+                        ? "bg-[var(--bg-light)] text-[var(--primary-text)]"
+                        : "text-[var(--secondary-text)] hover:text-[var(--primary-text)] hover:bg-[var(--bg-light)]"
+                     }`
                   }
                 >
                   {item.icon}
@@ -175,12 +167,12 @@ export default function Navbar() {
               <div className="flex items-center gap-2 mt-3" ref={themeRef}>
                 <button
                   onClick={() => setIsThemeOpen((prev) => !prev)}
-                  className="flex items-center gap-1 px-2 py-1 rounded-md bg-gray-100 cursor-target hover:bg-gray-200 transition"
+                  className="flex items-center gap-1 px-2 py-1 rounded-md bg-[var(--bg-light)] cursor-target hover:opacity-90 transition"
                 >
-                  <FaPalette className="text-lg text-gray-600" /> Theme
+                  <FaPalette className="text-lg text-[var(--secondary-text)]" /> Theme
                 </button>
                 {isThemeOpen && (
-                  <div className="flex gap-2 bg-white shadow-md rounded-lg p-2">
+                  <div className="flex gap-2 bg-[var(--bg-primary)] shadow-md rounded-lg p-2">
                     {themes.map((t) => (
                       <button
                         key={t.name}

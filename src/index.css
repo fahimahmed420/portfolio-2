@@ -10,59 +10,64 @@
 }
 
 
-/* ================= LIGHT THEME ================= */
 :root,
 [data-theme="light"] {
-  --bg-primary: #ffffff; /* main background */
+  --bg-primary: #ffffff;
   --primary-text: #0d172a;
   --secondary-text: #575f6b;
   --bg-light: #f3f4f6;
-   --counter-active-bg: #000000;   /* black */
-  --counter-inactive-bg: #9ca3af; /* gray-400 */
+  --counter-active-bg: #000000;
+  --counter-inactive-bg: #9ca3af;
 }
 
-/* ================= DARK THEME ================= */
+/* DARK THEME */
 [data-theme="dark"] {
-  --bg-primary: #1e2125; /* main background */
+  --bg-primary: #1e2125;
   --primary-text: #d7d9dd;
   --secondary-text: #b1b4b8;
   --bg-light: #121416;
-   --counter-active-bg: #ffffff;   /* white */
-  --counter-inactive-bg: #4b5563; /* gray-600 */
+  --counter-active-bg: #ffffff;
+  --counter-inactive-bg: #4b5563;
 }
 
-/* ================= PURPLE THEME ================= */
+/* PURPLE THEME */
 [data-theme="purple"] {
-  --bg-primary: #7c3aed; /* main background */
+  --bg-primary: #7c3aed;
   --primary-text: #e0d7f5;
   --secondary-text: #c4b5fd;
-  --bg-light: #5b21b6;
+  --bg-light: #5b21b6; /* added */
+  --counter-active-bg: #f0e9e9;
+  --counter-inactive-bg: #5b21b6;
 }
 
-/* ================= GREEN THEME ================= */
+/* GREEN THEME */
 [data-theme="green"] {
-  --bg-primary: #047857; /* main background */
+  --bg-primary: #047857;
   --primary-text: #f0fdf4;
   --secondary-text: #bbf7d0;
   --bg-light: #065f46;
+  --counter-active-bg: #f0e9e9;
+  --counter-inactive-bg: #065f46;
 }
 
-/* ================= ORANGE THEME ================= */
+/* ORANGE THEME */
 [data-theme="orange"] {
-  --bg-primary: #f97316; /* main background */
+  --bg-primary: #f97316;
   --primary-text: #ffffff;
   --secondary-text: #fcd34d;
   --bg-light: #c2410c;
+  --counter-active-bg: #f0e9e9;
+  --counter-inactive-bg: #c2410c;
 }
 
-/* ========== UTILITY CLASSES (same as before) ========== */
+/* Utility Classes */
 .text-primary { color: var(--primary-text); }
 .text-secondary { color: var(--secondary-text); }
-
-.bg-primary {background-color: var(--bg-primary);}
+.bg-primary { background-color: var(--bg-primary); }
 .bg-light { background-color: var(--bg-light); }
-.bg-counter-active {background-color: var(--counter-active-bg);}
-.bg-counter-inactive {background-color: var(--counter-inactive-bg);}
+.bg-counter-active { background-color: var(--counter-active-bg); }
+.bg-counter-inactive { background-color: var(--counter-inactive-bg); }
+
 
 
 

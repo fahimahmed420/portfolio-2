@@ -43,33 +43,33 @@ const tabs = [
       </div>
     ),
   },
-  {
-    label: "Experience",
-    icon: "briefcase",
-    link: "experience",
-    content: (
-      <div className="text-secondary w-full">
-        <h3 className="text-lg font-semibold mb-2">Experience</h3>
-        <p className="mb-4">
-          Hands-on projects and collaborations that shaped my expertise.
-        </p>
-        <ul className="space-y-3">
-          <li className="flex items-center gap-2">
-            <Code className="w-5 h-5 text-blue-600" />
-            <span>Built multiple React & Node.js projects</span>
-          </li>
-          <li className="flex items-center gap-2">
-            <Database className="w-5 h-5 text-green-600" />
-            <span>Worked with MongoDB & Firebase</span>
-          </li>
-          <li className="flex items-center gap-2">
-            <Layers className="w-5 h-5 text-purple-600" />
-            <span>Focused on scalable and maintainable code</span>
-          </li>
-        </ul>
-      </div>
-    ),
-  },
+  // {
+  //   label: "Experience",
+  //   icon: "briefcase",
+  //   link: "experience",
+  //   content: (
+  //     <div className="text-secondary w-full">
+  //       <h3 className="text-lg font-semibold mb-2">Experience</h3>
+  //       <p className="mb-4">
+  //         Hands-on projects and collaborations that shaped my expertise.
+  //       </p>
+  //       <ul className="space-y-3">
+  //         <li className="flex items-center gap-2">
+  //           <Code className="w-5 h-5 text-blue-600" />
+  //           <span>Built multiple React & Node.js projects</span>
+  //         </li>
+  //         <li className="flex items-center gap-2">
+  //           <Database className="w-5 h-5 text-green-600" />
+  //           <span>Worked with MongoDB & Firebase</span>
+  //         </li>
+  //         <li className="flex items-center gap-2">
+  //           <Layers className="w-5 h-5 text-purple-600" />
+  //           <span>Focused on scalable and maintainable code</span>
+  //         </li>
+  //       </ul>
+  //     </div>
+  //   ),
+  // },
   {
     label: "Skills",
     icon: "award",
@@ -179,7 +179,7 @@ export default function TabPreviewSection() {
   const [hoverIndex, setHoverIndex] = useState(null);
 
   return (
-    <div className="max-w-4xl mx-auto px-4">
+    <div className="max-w-4xl mx-auto md:px-4">
       {/* Tabs */}
       <div className="flex flex-wrap justify-center gap-6 sm:gap-10 border-b border-gray-300 pb-3 mb-6">
         {tabs.map((tab, idx) => {

@@ -22,7 +22,7 @@ const Button = React.forwardRef(
       destructive: "bg-red-600 text-white hover:bg-red-700",
       outline: "border border-gray-300 hover:bg-gray-100 cursor-target",
       secondary: "bg-gray-200 text-gray-800 hover:bg-gray-300 cursor-target",
-      ghost: "hover:bg-gray-100 cursor-target",
+      ghost: "cursor-target",
       link: "text-blue-600 underline hover:text-blue-800 cursor-target",
       success: "bg-green-600 text-white hover:bg-green-700",
       warning: "bg-yellow-500 text-black hover:bg-yellow-600",
