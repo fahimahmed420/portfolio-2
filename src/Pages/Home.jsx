@@ -12,8 +12,6 @@ import {
   LuGithub,
   LuTwitter,
   LuCode,
-  LuCoffee,
-  LuUser,
   LuBriefcase,
   LuFolderOpen,
   LuMail,
@@ -22,8 +20,10 @@ import {
   LuExternalLink,
   LuFacebook,
   LuGraduationCap,
+  LuBookOpen 
 } from "react-icons/lu";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { AiOutlineTool } from "react-icons/ai";
 import TabPreviewSection from "../Components/TabPreviewSection";
 import TextType from "../Components/ui/TextType";
 import { motion } from "framer-motion";
@@ -38,14 +38,14 @@ const iconMap = {
   Twitter: LuTwitter,
   Facebook: LuFacebook,
   Code: LuCode,
-  Coffee: LuCoffee,
-  User: LuUser,
   Briefcase: LuBriefcase,
   FolderOpen: LuFolderOpen,
   Mail: LuMail,
   ArrowRight: LuArrowRight,
   ExternalLink: LuExternalLink,
   GraduationCap: LuGraduationCap,
+  BookOpen: LuBookOpen,
+  Tool: AiOutlineTool
 };
 
 const Home = () => {
@@ -94,9 +94,9 @@ const Home = () => {
 
   const quickStats = [
     { icon: "Code", value: "10+", label: "Projects Completed" },
-    { icon: "Users", value: "0", label: "Happy Clients" },
-    { icon: "Award", value: "0", label: "Awards Won" },
-    { icon: "Coffee", value: "0", label: "Cups of Coffee" },
+    { icon: "BookOpen", value: "700+", label: "Hours of Learning" },
+    { icon: "Github", value: "300+", label: "Commits on GitHub" },
+    { icon: "Tool", value: "5+", label: "Tech Stacks Learned" },
   ];
 
   const testimonials = [
@@ -427,7 +427,7 @@ const Home = () => {
           whileHover={{ scale: 1.1 }}
           className="hover:text-primary rotate-90 origin-right text-secondary cursor-target flex items-center"
         >
-          <FaGithub className="mr-1"/> GitHub
+          <FaGithub className="mr-1" /> GitHub
         </motion.a>
         <motion.a
           href="https://www.linkedin.com/in/-fahim-ahmed/"
@@ -436,7 +436,7 @@ const Home = () => {
           whileHover={{ scale: 1.1 }}
           className="hover:text-primary rotate-90 origin-right text-secondary cursor-target flex items-center "
         >
-          <FaLinkedin className="mr-1"/> LinkedIn
+          <FaLinkedin className="mr-1" /> LinkedIn
         </motion.a>
       </div>
     </div>

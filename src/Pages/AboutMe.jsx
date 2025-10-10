@@ -54,13 +54,58 @@ const AboutMe = () => {
         {/* Left Sidebar */}
         <aside className="w-full lg:w-80 bg-light p-6 lg:sticky lg:top-16 lg:h-[calc(100vh-64px)] flex flex-col gap-6 rounded-lg">
           <div className="flex flex-col items-center space-y-3">
-            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden shadow-lg mb-4">
-              <Image
-                src={profile.image}
-                alt={profile.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden ring-4 
+                ring-[var(--primary-text)] flex flex-col justify-center items-center bg-light relative">
+                  {/* Line 1 */}
+                  <div className="w-full whitespace-nowrap flex animate-marquee-slow">
+                    <p className="text-secondary font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                    <p className="text-secondary font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                  </div>
+
+                  {/* Line 2 */}
+                  <div className="w-full whitespace-nowrap flex animate-marquee-reverse">
+                    <p className="text-secondary opacity-50 font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                    <p className="text-secondary opacity-50 font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                  </div>
+
+                  {/* Line 3 */}
+                  <div className="w-full whitespace-nowrap flex animate-marquee">
+                    <p className="text-secondary font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                    <p className="text-secondary font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                  </div>
+
+                  {/* Line 4 */}
+                  <div className="w-full whitespace-nowrap flex animate-marquee-reverse-slow">
+                    <p className="text-secondary opacity-50 font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                    <p className="text-secondary opacity-50 font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                  </div>
+
+                  {/* Line 5 */}
+                  <div className="w-full whitespace-nowrap flex animate-marquee-fast">
+                    <p className="text-secondary font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                    <p className="text-secondary font-bold px-2">
+                      Fahim Ahmed • Fahim Ahmed • Fahim Ahmed • Fahim Ahmed •
+                    </p>
+                  </div>
+                </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary text-center">
               {profile.name}
             </h2>
